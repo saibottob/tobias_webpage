@@ -1,0 +1,37 @@
+{
+  "name": "tobias_webpage",
+  "version": "1.0.0",
+  "description": "Tobias personal webpage",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "node-sass sass/main.scss css/style.css --watch",
+    "compile-sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat-css": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
+    "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress-css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saibottob/tobias_webpage.git"
+  },
+  "keywords": [
+    "webpage"
+  ],
+  "author": " Tobias Gatschet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saibottob/tobias_webpage/issues"
+  },
+  "homepage": "https://github.com/saibottob/tobias_webpage#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "concat": "^1.0.3",
+    "gulp-sass": "^4.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
