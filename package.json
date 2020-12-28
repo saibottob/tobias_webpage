@@ -4,12 +4,9 @@
   "description": "Tobias personal webpage",
   "main": "index.js",
   "scripts": {
-    "watch-sass": "node-sass sass/main.scss css/style.css --watch",
-    "compile-sass": "node-sass sass/main.scss css/style.comp.css",
-    "concat-css": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
     "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
-    "compress-css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css"
+    "build": "webpack",
+    "build-dev": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -26,12 +23,19 @@
   "homepage": "https://github.com/saibottob/tobias_webpage#readme",
   "devDependencies": {
     "autoprefixer": "^10.1.0",
-    "concat": "^1.0.3",
+    "css-loader": "^2.1.0",
     "gulp-sass": "^4.1.0",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^8.3.1"
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-cli": "^8.3.1",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-fix-style-only-entries": "^0.6.0",
+    "html-webpack-plugin": "^4.5.0"
   },
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^4.14.1"
   }
 }
