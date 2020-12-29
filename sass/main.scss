@@ -1,4 +1,18 @@
+@import "./color";
+
+@import "./navigation";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
-    background-color: red; 
-    border-radius: 2 * 100%;
+	background-color: $glp_white;
+}
+
+section {
+	height: 2000px;
+	background-color: gray;
+	display: block;
 }
