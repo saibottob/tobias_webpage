@@ -26,7 +26,7 @@
 
 .name {
 	flex: 3;
-	color: $glp_font_color;
+	color: $black;
 	font-size: 3em;
 	align-items: center;
 	display: flex;
@@ -35,7 +35,27 @@
 nav {
 	position: sticky;
 	top: 0px;
-	height: 100px;
-	line-height: 100px;
-	background-color: blue;
+	height: 60px;
+	line-height: 60px;
+	background-color: $glp_light_green;
+	color: $glp_dark_green;
+
+	ul {
+		display: flex;
+		list-style-type: none;
+		text-decoration: none;
+		font-size: 1.5em;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			padding-right: 10px;
+
+			&:not(:last-child)::after {
+				padding-left: 10px;
+				content: "";
+				border-right: 1px solid $light_gray;
+			}
+		}
+	}
 }
