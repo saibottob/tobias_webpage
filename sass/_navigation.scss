@@ -30,8 +30,9 @@
 
 .name {
 	flex: 5;
-	color: $black;
-	font-size: 3em;
+	color: $glp_font_color;
+	font-weight: 300;
+	font-size: 2.8em;
 	align-items: center;
 	display: flex;
 
@@ -40,9 +41,8 @@
 	}
 
 	@media screen and (max-width: 750px) {
-		line-height: 60px;
 		font-size: 1.5em;
-		align-items: center;
+		padding-top: 5px;
 	}
 }
 
@@ -57,19 +57,38 @@ nav {
 	ul {
 		display: flex;
 		list-style-type: none;
-		text-decoration: none;
 		font-size: 1.5em;
 		align-items: center;
 		justify-content: center;
 
 		li {
-			padding-right: 10px;
+			padding-left: 10px;
 
 			&:not(:last-child)::after {
 				padding-left: 10px;
 				content: "";
 				border-right: 1px solid $light_gray;
 			}
+
+			&:last-child {
+				padding-right: 10px;
+			}
+
+			&:hover {
+				background-color: $glp_dark_green;
+				color: $glp_light_green;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+				cursor: pointer;
+			}
+		}
+
+		.active {
+			background-color: $glp_dark_green;
+			color: $glp_light_green;
 		}
 	}
 

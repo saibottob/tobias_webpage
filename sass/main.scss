@@ -1,9 +1,10 @@
 @import "./color";
 
 @import "./navigation";
+@import "./aboutme";
 
 // Font
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
 
 * {
 	margin: 0;
@@ -13,12 +14,7 @@
 body {
 	background-color: $glp_white;
 	font-family: "Oswald", sans-serif;
-}
-
-section {
-	height: 2000px;
-	background-color: gray;
-	display: block;
+	font-weight: 400;
 }
 
 i {
