@@ -1,6 +1,22 @@
 .about-me {
 	div {
 		display: flex;
+
+		@media screen and (max-width: 750px) {
+			flex-direction: column;
+		}
+	}
+
+	img {
+		flex: 1;
+		width: 400px;
+		object-fit: contain;
+		border-radius: 100%;
+		margin: 50px;
+
+		@media screen and (max-width: 750px) {
+			margin: 20px 0;
+		}
 	}
 
 	.about-me-text {
@@ -8,13 +24,25 @@
 		flex-direction: column;
 		justify-content: center;
 		text-align: right;
+		margin-right: 50px;
+		color: $black;
 	}
 
-	img {
-		flex: 1;
-		width: 700px;
-		object-fit: contain;
-		border-radius: 80%;
-		padding: 50px;
+	.about-me-name {
+		font-size: 3em;
+	}
+
+	.about-me-kw21 {
+		font-size: 1.5em;
+		font-weight: 300;
+	}
+
+	.about-me-slogan {
+		font-size: 2em;
+		margin: 0px 50px;
+
+		@media screen and (max-width: 750px) {
+			margin-top: 30px;
+		}
 	}
 }

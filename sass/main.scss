@@ -2,6 +2,7 @@
 
 @import "./navigation";
 @import "./aboutme";
+@import "./footer";
 
 // Font
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
@@ -15,9 +16,9 @@ body {
 	background-color: $glp_white;
 	font-family: "Oswald", sans-serif;
 	font-weight: 400;
-}
 
-i {
-	height: 5px;
-	width: 5px;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
