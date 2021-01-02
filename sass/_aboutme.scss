@@ -1,9 +1,12 @@
 .about-me {
 	div {
 		display: flex;
+		margin-right: 20%;
 
 		@media screen and (max-width: 750px) {
 			flex-direction: column;
+			margin-right: 0%;
+			align-items: center;
 		}
 	}
 
