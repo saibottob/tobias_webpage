@@ -21,6 +21,10 @@
 		@media screen and (max-width: 750px) {
 			margin: 20px 0;
 		}
+
+		@media screen and (max-width: 400px) {
+			width: 100vw;
+		}
 	}
 
 	.about-me-text {
@@ -30,6 +34,10 @@
 		text-align: right;
 		margin-right: 50px;
 		color: $black;
+
+		@media screen and (max-width: 750px) {
+			margin-right: 0;
+		}
 	}
 
 	.about-me-name {
@@ -47,6 +55,11 @@
 
 		@media screen and (max-width: 750px) {
 			margin-top: 30px;
+		}
+
+		@media screen and (max-width: 400px) {
+			max-width: 100vw;
+			font-size: 1em;
 		}
 	}
 }
