@@ -2,9 +2,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path")
 module.exports = {
-  entry: './sass/main.scss',
+  entry: ['./sass/main.scss', './js/app.js'],
   output: {
     path: path.resolve(__dirname, 'lib')
   },
@@ -40,7 +41,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
         title : 'Tobias Gatschet',
-        filename: 'home.html',
+        filename: 'index.html',
         template: 'index.html',
         minify: {
           removeComments: true,
@@ -49,12 +50,14 @@ module.exports = {
       }),
   ],
   optimization: {
+    minimize: true,
     minimizer: [
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
           safe: true
         }
-      })
+      }),
+      new TerserPlugin(),
     ]
   },
 };

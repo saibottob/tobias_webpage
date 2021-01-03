@@ -5,6 +5,11 @@ footer {
 	flex-direction: row;
 	align-items: center;
 
+	@media screen and (max-width: 500px) {
+		height: 100px;
+		flex-direction: column;
+	}
+
 	.footer-social-media {
 		flex: 1;
 		display: flex;
