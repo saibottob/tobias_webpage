@@ -37,17 +37,19 @@
 
 			<div class="contact-input">
 				<form>
-					<input type="text" name="name" class="" id="name" max="50" placeholder=" " required autocomplete="off" />
+					<input type="text" name="name" class="" id="name" maxlength="5" placeholder=" " required autocomplete="off" />
 					<label for="name"><span>Ihr Name</span></label>
 
-					<input type="email" name="email" class="" id="email" max="50" placeholder=" " required autocomplete="off" />
+					<input type="email" name="email" class="" id="email" maxlength="50" placeholder=" " required autocomplete="off" />
 					<label for="email"><span>Ihre Email</span></label>
 
-					<!-- <input type="text" name="suject" class="" id="suject" required autocomplete="off" />
-				<label for="suject"><span>Betreff</span></label>
+					<input type="text" name="suject" class="" id="suject" maxlength="50" placeholder=" " required autocomplete="off" />
+					<label for="suject"><span>Betreff</span></label>
 
-				<textarea type="text" name="message" class="" id="message" rows="5" required autocomplete="off"></textarea>
-				<label for="message"><span>Ihre Message</span></label> -->
+					<textarea type="text" name="message" class="" id="message" maxlength="1000" rows="3" placeholder=" " required autocomplete="off"></textarea>
+					<label for="message"><span>Ihre Message</span></label>
+
+					<input class="btn-submit" type="submit" />
 				</form>
 			</div>
 		</section>

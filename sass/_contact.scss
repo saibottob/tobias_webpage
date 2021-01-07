@@ -4,7 +4,8 @@ section {
 		margin-bottom: 50px;
 	}
 
-	input {
+	input,
+	textarea {
 		font-size: 48px;
 		font-weight: 300;
 		border-radius: 2px;
@@ -49,11 +50,15 @@ section {
 			border-color: $glp_dark_green;
 		}
 
-		&:focus {
+		&:focus,
+		&:valid,
+		&:not(:placeholder-shown) {
 			outline: 0;
 			padding-top: 35px;
 		}
+	}
 
+	input {
 		&:focus + label > span,
 		&:valid + label > span,
 		&:not(:placeholder-shown) + label > span {
@@ -61,5 +66,20 @@ section {
 			font-size: 22px;
 			color: #333;
 		}
+	}
+
+	textarea {
+		&:focus + label > span,
+		&:valid + label > span,
+		&:not(:placeholder-shown) + label > span {
+			top: -200px;
+			font-size: 22px;
+			color: #333;
+		}
+	}
+
+	.btn-submit {
+		border: 1px solid black;
+		cursor: pointer;
 	}
 }
