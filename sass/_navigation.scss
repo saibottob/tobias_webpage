@@ -4,7 +4,7 @@
 	display: flex;
 	height: 100px;
 
-	@media screen and (max-width: 750px) {
+	@media screen and (max-width: 850px) {
 		height: 60px;
 	}
 }
@@ -40,13 +40,14 @@
 		flex: 3;
 	}
 
-	@media screen and (max-width: 750px) {
+	@media screen and (max-width: 850px) {
 		font-size: 1.5em;
 		padding-top: 5px;
 	}
 }
 
 nav {
+	z-index: 100;
 	position: sticky;
 	top: 0px;
 	height: 60px;
@@ -103,7 +104,7 @@ nav {
 		cursor: pointer;
 	}
 
-	@media screen and (max-width: 750px) {
+	@media screen and (max-width: 850px) {
 		.menu_checkbtn {
 			display: inline-block;
 		}
