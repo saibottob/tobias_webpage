@@ -1,18 +1,38 @@
-section {
+section.contact {
+	display: flex;
+	margin: 30px 80px;
+	align-items: center;
+
+	@media screen and (max-width: $breakpoint_smartphone) {
+		flex-direction: column;
+		margin: 30px 20px;
+	}
+
+	p {
+		flex: 1;
+		color: $glp_font_color;
+		font-size: 1.5em;
+		margin-right: 50px;
+
+		@media screen and (max-width: $breakpoint_smartphone) {
+			margin-right: 0;
+		}
+	}
+
 	.contact-input {
-		margin-top: 50px;
-		margin-bottom: 50px;
+		flex: 1;
+
+		@media screen and (max-width: $breakpoint_smartphone) {
+			width: 100%;
+		}
 	}
 
 	input,
 	textarea {
-		font-size: 48px;
-		font-weight: 300;
+		font-size: 1.5em;
 		border-radius: 2px;
-		margin: 0;
 		border: none;
 		width: 80%;
-		background: rgba(0, 0, 0, 0);
 		transition: padding-top 0.2s ease, margin-top 0.2s ease;
 		overflow-x: hidden;
 
@@ -20,23 +40,20 @@ section {
 			display: block;
 			position: relative;
 			white-space: nowrap;
-			padding: 0;
+			padding: 5px;
 			margin: 0;
-			width: 10%;
-			border-top: 1px solid red;
+			width: 50%;
+			border-top: 1px solid $error_color;
 			-webkit-transition: width 0.4s ease;
 			transition: width 0.4s ease;
 			height: 0px;
 
 			> span {
-				font-weight: 300;
 				margin: 0;
 				position: absolute;
-				color: #8f8f8f;
-				font-size: 48px;
-				top: -66px;
-				left: 0px;
-				z-index: -1;
+				color: $light_gray_without_alpha;
+				font-size: 1.5em;
+				top: -32px;
 				-webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 				transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 			}
@@ -47,14 +64,21 @@ section {
 		}
 
 		&:valid + label {
-			border-color: $glp_dark_green;
+			border-color: $success_color;
 		}
 
 		&:focus,
 		&:valid,
 		&:not(:placeholder-shown) {
 			outline: 0;
-			padding-top: 35px;
+			padding-top: 15px;
+		}
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			transition: background-color 9999s ease-in-out 0s;
 		}
 	}
 
@@ -62,9 +86,9 @@ section {
 		&:focus + label > span,
 		&:valid + label > span,
 		&:not(:placeholder-shown) + label > span {
-			top: -100px;
-			font-size: 22px;
-			color: #333;
+			top: -50px;
+			font-size: 1em;
+			color: $glp_dark_blue;
 		}
 	}
 
@@ -72,14 +96,29 @@ section {
 		&:focus + label > span,
 		&:valid + label > span,
 		&:not(:placeholder-shown) + label > span {
-			top: -200px;
-			font-size: 22px;
-			color: #333;
+			top: -100px;
+			font-size: 1em;
+			color: $glp_dark_blue;
 		}
 	}
 
 	.btn-submit {
-		border: 1px solid black;
+		margin: 0;
+		padding: 5px !important;
+		border: 1px solid $light_gray_without_alpha;
+		border-radius: 10px;
+		width: fit-content;
+		font-size: 1.3em;
+		color: $glp_light_blue;
+		margin-top: 20px;
 		cursor: pointer;
 	}
+}
+
+.success-message {
+	background-color: $glp_light_blue;
+	margin: 20px auto;
+	width: fit-content;
+	padding: 10px;
+	border-radius: 5px;
 }

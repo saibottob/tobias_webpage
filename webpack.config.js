@@ -19,7 +19,7 @@ function generateHtmlPlugins (templateDir) {
     // Create new HTMLWebpackPlugin with options
     return new HTMLWebpackPlugin({
       title : 'Tobias Gatschet',
-      filename: `${name}.html`,
+      filename: `${name}.${extension}`,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
       minify: {
           removeComments: true,

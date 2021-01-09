@@ -5,6 +5,9 @@ footer {
 	flex-direction: row;
 	align-items: center;
 
+	position: sticky;
+	top: calc(100vh - 60px);
+
 	@media screen and (max-width: 500px) {
 		height: 100px;
 		flex-direction: column;
