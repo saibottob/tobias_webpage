@@ -16,6 +16,7 @@ section.contact {
 
 		@media screen and (max-width: $breakpoint_smartphone) {
 			margin-right: 0;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -121,4 +122,8 @@ section.contact {
 	width: fit-content;
 	padding: 10px;
 	border-radius: 5px;
+
+	@media screen and (max-width: $breakpoint_smartphone) {
+		margin: 20px 20px;
+	}
 }
