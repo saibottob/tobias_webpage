@@ -76,7 +76,7 @@ if (!empty($_POST)){
 			<ul>
 				<li><a href="./index.html">Über mich</a></li>
 				<li><a href="./wahlen.html">Wahlen 2021</a></li>
-				<li><a href="./position.html">Position</a></li>
+				<li><a href="./politic.html">Politik</a></li>
 				<li><a href="./beruf.html">Berufserfahrung / Ausbildung</a></li>
 				<li class="active"><a href="#">Kontakt</a></li>
 			</ul>
@@ -89,7 +89,7 @@ if (!empty($_POST)){
 		?>
 
 		<section class="contact">
-			<p>Haben sie eine Frage, einen Kommentar oder ein Anliegen. Kontaktieren sie mich direkt oder über eine der Social Media Plattform, ich antworte und diskutiere gerne über ihr Anliegen.</p>
+			<p>Haben sie eine Frage, einen Kommentar oder ein Anliegen. Kontaktieren sie mich direkt oder über eine der Social Media Plattform. Ich antworte und diskutiere gerne über ihr Anliegen.</p>
 
 			<div class="contact-input">
 				<form method="POST">

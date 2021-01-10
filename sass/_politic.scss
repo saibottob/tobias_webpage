@@ -1,0 +1,63 @@
+section {
+	display: flex;
+	margin: 20px 20px;
+
+	.left-side {
+		flex: 3;
+
+		.main-politic {
+			font-size: 1.5em;
+			margin-bottom: 20px;
+		}
+
+		.title {
+			font-size: 1.3em;
+			margin-bottom: 20px;
+		}
+
+		li {
+			list-style: none;
+			font-size: 1.2em;
+			margin-bottom: 10px;
+
+			&:nth-child(odd) {
+				div {
+					flex-direction: row;
+				}
+			}
+
+			&:nth-child(even) {
+				div {
+					flex-direction: row-reverse;
+				}
+			}
+
+			svg {
+				max-width: 100px;
+				margin-right: 20px;
+			}
+
+			div {
+				display: flex;
+			}
+
+			p {
+				display: flex;
+				align-items: center;
+			}
+
+			.environment {
+				color: green;
+			}
+
+			.waste {
+				color: brown;
+			}
+		}
+	}
+
+	.right-side {
+		flex: 2;
+		padding-left: 50px;
+	}
+}
