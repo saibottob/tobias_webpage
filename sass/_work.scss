@@ -1,6 +1,15 @@
 .work {
 	margin: 20px 20px;
 
+	.title-left {
+		text-align: right;
+	}
+
+	.right,
+	.left {
+		box-sizing: border-box;
+	}
+
 	/* The actual timeline (the vertical ruler) */
 	.timeline {
 		position: relative;
@@ -13,10 +22,10 @@
 		content: "";
 		position: absolute;
 		width: 6px;
-		background-color: $glp_dark_green;
+		background-color: $glp_dark_blue;
 		top: 0;
 		bottom: 0;
-		left: 20%;
+		left: 50%;
 		margin-left: -3px;
 	}
 
@@ -25,7 +34,7 @@
 		padding: 10px 40px;
 		position: relative;
 		background-color: inherit;
-		width: 60%;
+		width: 50%;
 	}
 
 	/* The circles on the timeline */
@@ -36,15 +45,32 @@
 		height: 25px;
 		right: -17px;
 		background-color: white;
-		border: 4px solid $glp_light_green;
+		border: 4px solid $glp_light_blue;
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;
 	}
 
+	/* Place the container to the left */
+	.left {
+		left: 0;
+		text-align: right;
+	}
+
 	/* Place the container to the right */
 	.right {
-		left: 20%;
+		left: 50%;
+	}
+
+	/* Add arrows to the left container (pointing right) */
+	.left::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 22px;
+		width: 0;
+		z-index: 1;
+		right: 30px;
 	}
 
 	/* Add arrows to the right container (pointing left) */
@@ -65,15 +91,22 @@
 
 	/* The actual content */
 	.content {
-		padding: 20px 30px;
-		border: 1px solid;
-		border-color: $glp_light_blue;
 		position: relative;
+	}
+
+	.text-left {
+		width: fit-content;
+		border: 1px solid $glp_light_green;
+		margin-left: auto;
+		padding: 20px 30px;
 		border-radius: 6px;
 	}
 
-	.title {
-		align-self: auto;
+	.text-right {
+		width: fit-content;
+		border: 1px solid $glp_light_green;
+		padding: 20px 30px;
+		border-radius: 6px;
 	}
 
 	/* Media queries - Responsive timeline on screens less than 600px wide */
@@ -96,8 +129,14 @@
 		}
 
 		/* Make sure all circles are at the same spot */
+		.left::after,
 		.right::after {
 			left: 15px;
+		}
+
+		/* Make all right containers behave like the left ones */
+		.right {
+			left: 0%;
 		}
 	}
 }
