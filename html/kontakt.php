@@ -75,7 +75,6 @@ if (!empty($_POST)){
 
 			<ul>
 				<li><a href="./index.html">Über mich</a></li>
-				<li><a href="./wahlen.html">Wahlen 2021</a></li>
 				<li><a href="./politic.html">Politik</a></li>
 				<li><a href="./beruf.html">Berufserfahrung / Ausbildung</a></li>
 				<li class="active"><a href="#">Kontakt</a></li>
