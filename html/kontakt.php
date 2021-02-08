@@ -88,7 +88,7 @@ if (!empty($_POST)){
 		?>
 
 		<section class="contact">
-			<p>Haben sie eine Frage, einen Kommentar oder ein Anliegen. Kontaktieren sie mich direkt oder über eine der Social Media Plattform. Ich antworte und diskutiere gerne über ihr Anliegen.</p>
+			<p>Haben Sie eine Frage, einen Kommentar oder ein Anliegen. Kontaktieren Sie mich direkt oder über eine der Social Media Plattformen. Gerne diskutiere ich mit Ihnen.</p>
 
 			<div class="contact-input">
 				<form method="POST">
