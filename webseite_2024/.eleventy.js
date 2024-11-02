@@ -1,12 +1,9 @@
 module.exports = function(eleventyConfig) {
-    // Add a filter using the Config API
-    eleventyConfig.addFilter("myFilter", function(value) {
-        return value.toUpperCase();
-    });
-
     // Copy the `img` and `css` folders to the output
-    eleventyConfig.addPassthroughCopy("img");
-    eleventyConfig.addPassthroughCopy("css");
+    eleventyConfig.addPassthroughCopy("src/assets/");
+    eleventyConfig.addPassthroughCopy("src/css/");
+
+    eleventyConfig.addWatchTarget("src/css/");
 
     // You can return your Config object (optional)
     return {
