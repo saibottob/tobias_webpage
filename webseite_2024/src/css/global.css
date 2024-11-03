@@ -1,11 +1,12 @@
 @import "reset.css";
+@import "variables.css";
 
 body {
     background-color: #b4b4b4;
 }
 
 nav {
-    background-color: #ffffff;
+    background-color: var(--header-footer-background-color);
     height: 75px;
     display: flex;
     justify-content: end;
@@ -20,7 +21,7 @@ nav ul{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-right: 30px;
+    margin-right: 50px;
 }
 
 nav ul li{
@@ -36,11 +37,11 @@ nav ul li a:visited{
 
 nav ul li a:hover,
 nav ul li a:active{
-    color: #b60606;
+    color: var(--highlight-color);
 }
 
 footer {
-    background-color: #ffffff;
+    background-color:  var(--header-footer-background-color);
     height: 75px;
     display: flex;
     justify-content: center;
@@ -50,10 +51,48 @@ footer {
     width: 100%;
 }
 
-/* TODO: Wieder entfernen, resp Style für die Index definieren */
-h1 {
-    color: #000000;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 50px;
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+
+    nav {
+        display: block;
+    }
+
+  
+    .burger-menu {
+      display: block;
+      margin-right: 30px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      text-align: center;
+      background-color: var(--header-footer-background-color);
+    }
+  }
