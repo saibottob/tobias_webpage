@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "variables.css";
+@import "footer.css";
 
 body {
     background-color: #b4b4b4;
@@ -38,17 +39,6 @@ nav ul li a:visited{
 nav ul li a:hover,
 nav ul li a:active{
     color: var(--highlight-color);
-}
-
-footer {
-    background-color:  var(--header-footer-background-color);
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 .burger-menu {
