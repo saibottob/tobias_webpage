@@ -1,0 +1,218 @@
+---
+layout: layouts/base.html
+title: Blog
+description: Aktuelle Blogbeiträge
+blogscss: true
+---
+
+<section class="all-blogs">
+  <h1 class="blog-main-title">Alle Blogbeiträge</h1>
+  <div class="blog-columns">
+    <div class="blog-category">
+      <h2 class="blog-category-title politik-title">
+        <span class="icon">
+          <!-- Politik-Icon: z.B. ein stilisiertes Gebäude -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 21h18M4 17h16M6 13h12M8 9h8M10 5h4"
+              stroke="#005baa"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+        Politik
+      </h2>
+      <div class="blog-cards">
+        {% assign posts = collections.blog | sort: "date" | reverse %} {% for
+        post in posts %} {% if post.data.kategorie == "politik" %}
+        <article class="blog-card">
+          <a href="{{ post.url }}" class="blog-card-link">
+            {% if post.data.image %}
+            <img
+              src="{{ post.data.image }}"
+              alt="{{ post.data.title }}"
+              class="blog-card-thumb"
+            />
+            {% endif %}
+            <h3 class="blog-card-title">{{ post.data.title }}</h3>
+            <span class="blog-date">{{ post.date | date: "%d.%m.%Y" }}</span>
+            <p class="blog-card-desc">{{ post.data.description }}</p>
+          </a>
+        </article>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+    <div class="blog-category">
+      <h2 class="blog-category-title technik-title">
+        <span class="icon">
+          <!-- Technik-Icon: ein gerades Zahnrad -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" stroke="#218c4a" stroke-width="2" />
+            <g stroke="#218c4a" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="2" x2="12" y2="5" />
+              <line x1="12" y1="19" x2="12" y2="22" />
+              <line x1="2" y1="12" x2="5" y2="12" />
+              <line x1="19" y1="12" x2="22" y2="12" />
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+            </g>
+          </svg>
+        </span>
+        Technik
+      </h2>
+      <div class="blog-cards">
+        {% for post in posts %} {% if post.data.kategorie == "technik" %}
+        <article class="blog-card">
+          <a href="{{ post.url }}" class="blog-card-link">
+            {% if post.data.image %}
+            <img
+              src="{{ post.data.image }}"
+              alt="{{ post.data.title }}"
+              class="blog-card-thumb"
+            />
+            {% endif %}
+            <h3 class="blog-card-title">{{ post.data.title }}</h3>
+            <span class="blog-date">{{ post.date | date: "%d.%m.%Y" }}</span>
+            <p class="blog-card-desc">{{ post.data.description }}</p>
+          </a>
+        </article>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog-main-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 38px;
+    letter-spacing: 1px;
+    color: #005fa3;
+    font-weight: 700;
+  }
+  .blog-columns {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+  .blog-category {
+    flex: 1 1 0;
+    min-width: 340px;
+    max-width: 650px; /* Breiter! */
+  }
+  .blog-category-title {
+    font-size: 1.7em;
+    margin-bottom: 26px;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #0077cc;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(90deg, #f7fafd 60%, transparent 100%);
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 119, 204, 0.04);
+  }
+  .politik-title {
+    border-color: #005baa;
+    color: #005baa;
+    fill: #005baa; /* Für SVG-Icons */
+  }
+  .technik-title {
+    border-color: #218c4a;
+    color: #218c4a;
+    fill: #218c4a; /* Für SVG-Icons */
+  }
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+  }
+  .blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: flex-start;
+  }
+  .blog-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    padding: 32px 28px 26px 28px;
+    flex: 1 1 340px;
+    min-width: 300px;
+    max-width: 480px; /* Breiter! */
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+  }
+  .blog-card-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+  }
+  .blog-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(0, 119, 204, 0.1),
+      0 2px 16px rgba(0, 0, 0, 0.09);
+  }
+  .blog-card-thumb {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+    display: block;
+  }
+  .blog-card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.32em;
+    color: #0077cc;
+    transition: color 0.18s;
+  }
+  .blog-card-link:hover .blog-card-title {
+    color: #005fa3;
+    text-decoration: underline;
+  }
+  .blog-date {
+    display: block;
+    margin-bottom: 12px;
+    color: #888;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+  }
+  .blog-card-desc {
+    margin: 0;
+    color: #333;
+    font-size: 1.13em;
+    line-height: 1.6;
+  }
+  @media (max-width: 1200px) {
+    .blog-columns {
+      flex-direction: column;
+      gap: 32px;
+    }
+    .blog-category {
+      max-width: 100%;
+    }
+    .blog-card {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 900px) {
+    .blog-cards {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+</style>
