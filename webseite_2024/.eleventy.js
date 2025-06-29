@@ -6,9 +6,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("src/css/");
 
-  eleventyConfig.addCollection("blog", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md");
-  });
+  module.exports = function (eleventyConfig) {
+    eleventyConfig.addCollection("blog", function (collectionApi) {
+      return collectionApi.getFilteredByTag("blog").sort((a, b) => {
+        return a.date - b.date; // Neueste zuerst
+      });
+    });
+  };
 
   // You can return your Config object (optional)
   return {
