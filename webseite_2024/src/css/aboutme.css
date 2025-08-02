@@ -68,6 +68,94 @@
   left: -14px;
 }
 
+/* Titelstil */
+.timeline-title {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Zentriert den Inhalt */
+  gap: 14px;
+  font-size: 2em;
+  color: #0077cc;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 38px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #0077cc;
+  background: linear-gradient(90deg, #f7fafd 60%, transparent 100%);
+  box-shadow: 0 2px 8px rgba(0, 119, 204, 0.04);
+}
+
+.timeline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* About Me Sektion */
+.aboutme-main {
+  margin: 40px 0 0 0;
+}
+.aboutme-grid {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.aboutme-info {
+  flex: 1 1 320px;
+  max-width: 400px;
+  background: #f7fafd;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 119, 204, 0.06);
+  padding: 32px 28px;
+}
+.aboutme-facts-title,
+.aboutme-intro-title {
+  font-size: 1.2em;
+  color: #0077cc;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.aboutme-facts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.aboutme-facts li {
+  margin-bottom: 10px;
+  font-size: 1.08em;
+  color: #333;
+}
+.aboutme-intro p {
+  font-size: 1.08em;
+  color: #444;
+  margin: 0;
+}
+.aboutme-timeline {
+  flex: 2 1 600px;
+  min-width: 340px;
+}
+.aboutme-portrait {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 119, 204, 0.09);
+  display: block;
+  margin: 0 auto 18px auto;
+}
+@media (max-width: 900px) {
+  .aboutme-grid {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .aboutme-info,
+  .aboutme-timeline {
+    max-width: 100%;
+    min-width: 0;
+    padding: 24px 12px;
+  }
+}
 /* Responsive */
 @media screen and (max-width: 800px) {
   .timeline::after {
