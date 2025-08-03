@@ -46,6 +46,12 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   position: relative;
   z-index: 1;
+  font-weight: bold;
+}
+
+.timeline-container .content em {
+  font-weight: normal;
+  font-style: italic;
 }
 
 .timeline-container::before {
@@ -83,6 +89,7 @@
   border-bottom: 3px solid #0077cc;
   background: linear-gradient(90deg, #f7fafd 60%, transparent 100%);
   box-shadow: 0 2px 8px rgba(0, 119, 204, 0.04);
+  border-radius: 8px;
 }
 
 .timeline-icon {
@@ -95,12 +102,14 @@
 .aboutme-main {
   margin: 40px 0 0 0;
 }
+
 .aboutme-grid {
   display: flex;
   gap: 48px;
   align-items: flex-start;
   justify-content: center;
 }
+
 .aboutme-info {
   flex: 1 1 320px;
   max-width: 400px;
@@ -108,7 +117,9 @@
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0, 119, 204, 0.06);
   padding: 32px 28px;
+  margin-left: 20px;
 }
+
 .aboutme-facts-title,
 .aboutme-intro-title {
   font-size: 1.2em;
@@ -116,25 +127,30 @@
   margin-bottom: 12px;
   font-weight: 700;
 }
+
 .aboutme-facts ul {
   list-style: none;
   padding: 0;
   margin: 0 0 18px 0;
 }
+
 .aboutme-facts li {
   margin-bottom: 10px;
   font-size: 1.08em;
   color: #333;
 }
+
 .aboutme-intro p {
   font-size: 1.08em;
   color: #444;
   margin: 0;
 }
+
 .aboutme-timeline {
   flex: 2 1 600px;
   min-width: 340px;
 }
+
 .aboutme-portrait {
   width: 110px;
   height: 110px;
@@ -144,6 +160,7 @@
   display: block;
   margin: 0 auto 18px auto;
 }
+
 @media (max-width: 900px) {
   .aboutme-grid {
     flex-direction: column;
@@ -156,6 +173,7 @@
     padding: 24px 12px;
   }
 }
+
 /* Responsive */
 @media screen and (max-width: 800px) {
   .timeline::after {
