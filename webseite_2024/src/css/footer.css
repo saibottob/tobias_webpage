@@ -1,62 +1,114 @@
 footer {
-  background-color: var(--header-footer-background-color);
-  height: 75px;
+  background-color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed; /* Footer bleibt immer sichtbar */
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  z-index: 1000; /* Damit er über allem liegt */
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+  padding: 0 var(--spacing-lg);
 }
 
 .social-media-links {
   list-style: none;
   display: flex;
-  margin-left: 20px;
+  margin-left: var(--spacing-md);
+  gap: var(--spacing-md);
 }
 
 .social-media-links li {
-  margin: 0 10px;
+  margin: 0;
 }
 
 .social-media-links a img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s;
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 
 .social-media-links a img:hover {
   transform: scale(1.2);
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px var(--color-accent));
 }
 
 .email {
   margin: 0;
-  color: inherit;
+  color: white;
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.email:hover {
+  color: var(--color-accent);
 }
 
 footer p {
-  margin-right: 30px;
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9em;
 }
 
 @media (max-width: 768px) {
   footer {
-    flex-direction: column;
-    height: 90px;
-    gap: 10px;
+    flex-direction: row;
+    height: auto;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
   }
 
   .social-media-links {
-    margin-left: 0;
-    margin-top: 15px;
+    margin-left: auto;
+    margin-right: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .social-media-links a img {
+    width: 25px;
+    height: 25px;
   }
 
   footer p {
-    display: none;
+    font-size: 0.85em;
+    margin-right: 0;
+  }
+
+  .email {
+    font-size: 0.85em;
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: var(--spacing-sm);
+  }
+
+  .social-media-links {
+    gap: var(--spacing-xs);
+    margin-left: var(--spacing-sm);
+  }
+
+  .social-media-links a img {
+    width: 22px;
+    height: 22px;
+  }
+
+  footer p {
+    font-size: 0.8em;
+  }
+
+  .email {
+    font-size: 0.8em;
   }
 }
