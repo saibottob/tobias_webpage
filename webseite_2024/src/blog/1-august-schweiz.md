@@ -1,7 +1,7 @@
 ---
 layout: layouts/blogpost.html
 title: 1. August – Geburtstag der Schweiz und ein Moment, um uns auf unsere Stärken zu besinnen
-date: 2024-08-01
+date: 2025-08-01
 description: Die Schweiz steht vor grossen Herausforderungen – doch genau jetzt ist es Zeit, sich auf das zu besinnen, was uns stark macht.
 permalink: "/blog/1-august-schweiz/"
 image: /assets/images/blogposts/1august.png

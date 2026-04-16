@@ -24,8 +24,8 @@ blogscss: true
         Politik
       </h2>
       <div class="blog-cards">
-        {% assign posts = collections.blog | sort: "date" %} {% for post in
-        posts %} {% if post.data.kategorie == "politik" %}
+        {% assign posts = collections.blog %} {% for post in posts %} {% if
+        post.data.kategorie == "politik" %}
         <article class="blog-card">
           <a href="{{ post.url }}" class="blog-card-link">
             {% if post.data.image %}

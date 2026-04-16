@@ -5,111 +5,88 @@ description: Erfahre mehr über mich, meine Interessen und mein beruflicher Werd
 aboutmecss: true
 ---
 
-<section class="aboutme-main">
-  <div class="aboutme-grid">
-    <div class="aboutme-info">
-      <div class="aboutme-facts">
-        <img
-          src="/assets/images/Portrait.jpg"
-          alt="Portrait Tobias Gatschet"
-          class="aboutme-portrait"
-        />
-        <h2 class="aboutme-facts-title">Persönliche Fakten</h2>
-        <ul>
-          <li><strong>Wohnort:</strong> Muri bei Bern</li>
-          <li><strong>Alter:</strong> 32</li>
-          <li><strong>Lieblings-Technologie:</strong> Embedded Systems</li>
-          <li><strong>Hobbys:</strong> Wandern, Musik, Programmieren</li>
-          <li><strong>Sprachen:</strong> Deutsch, Englisch</li>
-        </ul>
-      </div>
-      <div class="aboutme-intro">
-        <h2 class="aboutme-intro-title">Über mich</h2>
-        <p>
-          Ich bin ein begeisterter Ingenieur und Berater mit Fokus auf
-          innovative Technologien und intelligente Informationssysteme. Mein
-          Antrieb ist es, komplexe Probleme kreativ und effizient zu lösen.
+<div class="am-page">
+  <!-- Hero Section -->
+  <section class="am-hero">
+    <div class="am-hero__container">
+      <img
+        src="/assets/images/Portrait.jpg"
+        alt="Portrait Tobias Gatschet"
+        class="am-hero__portrait"
+      />
+      <div class="am-hero__content">
+        <h1 class="am-hero__name">Tobias Gatschet</h1>
+        <p class="am-hero__role">Consultant &amp; Engineer</p>
+        <p class="am-hero__bio">
+          Begeisterter Ingenieur mit Fokus auf innovative Technologien und
+          intelligente Informationssysteme
         </p>
       </div>
     </div>
-    <div class="aboutme-timeline">
-      <h2 class="timeline-title">
-        <span class="timeline-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <rect
-              x="3"
-              y="7"
-              width="18"
-              height="13"
-              rx="3"
-              stroke="#0077cc"
-              stroke-width="2"
-            />
-            <path d="M8 7V5a4 4 0 018 0v2" stroke="#0077cc" stroke-width="2" />
-          </svg>
-        </span>
-        Berufliche Karriere
-      </h2>
-      <div class="timeline">
-        <div class="timeline-container right">
-          <h3>Juli 2025</h3>
-          <div class="content">
-            <h3>CENT Systems AG</h3>
-            <p>
-              Consultant / Projektleiter IIM – Intelligent Information
-              Management
-            </p>
-          </div>
-        </div>
-        <div class="timeline-container left">
-          <h3>Juni 2021 - Juli 2025</h3>
-          <div class="content">
-            <h3>QUMEA AG</h3>
-            <p>
-              Embedded Engineer <br />
-              <em
-                >Entwicklung von Sensorsoftware und Produktion,
-                Weiterentwicklung sowie Unterhalt und Pflege der Embedded Sensor
-                Software (Bluetooth Services / Wifi / System Management /
-                Radarfirmware)</em
-              >
-            </p>
-          </div>
-        </div>
-        <div class="timeline-container right">
-          <h3>Juni 2020</h3>
-          <div class="content">
-            <h3>AWK Group AG</h3>
-            <p>Junior Consultant IT Beratung</p>
-          </div>
-        </div>
-        <div class="timeline-container left">
-          <h3>Mai 2020</h3>
-          <div class="content">
-            <h3>Abschluss Master Studium Elektroingenieur ETH</h3>
-            <p>
-              Masterthesis: Event-triggered Multi-hop Communication for Wireless
-              Sensor Networks
-            </p>
-          </div>
-        </div>
-        <div class="timeline-container right">
-          <h3>August 2018</h3>
-          <div class="content">
-            <h3>Abschluss Bachelor Studium Elektroingenieur ETH</h3>
-          </div>
-        </div>
-        <div class="timeline-container left">
-          <h3>2017-2020</h3>
-          <div class="content">
-            <h3>Zircel</h3>
-            <p>
-              Aufbau eines Webframeworks für Webseiten im Stil einer
-              Konversation
-            </p>
-          </div>
-        </div>
+
+    <!-- Facts as Badges -->
+    <div class="am-hero__badges">
+      <div class="am-badge">
+        <svg class="am-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" />
+        </svg>
+        <span class="am-badge__text">Muri bei Bern</span>
+      </div>
+      <div class="am-badge">
+        <svg class="am-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+        </svg>
+        <span class="am-badge__text">Embedded Systems</span>
+      </div>
+      <div class="am-badge">
+        <svg class="am-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+        </svg>
+        <span class="am-badge__text">Deutsch, Englisch</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Experience Timeline Section -->
+  <section class="am-timeline-section">
+    <div class="am-container">
+      <h2 class="am-section-title">Meine Reise</h2>
+
+      <div class="am-timeline">
+        {% for item in experience | reverse %}
+          <div class="am-timeline__item">
+            <div class="am-timeline__marker {% if item.showYear %}am-timeline__marker--active{% endif %}">
+              {% if item.showYear %}
+                <span class="am-timeline__year">{{ item.year }}</span>
+              {% else %}
+                <span class="am-timeline__dot"></span>
+              {% endif %}
+            </div>
+            <div class="am-timeline__content">
+              <time class="am-timeline__period">{{ item.period }}</time>
+              <h3 class="am-timeline__company">{{ item.title }}</h3>
+              <p class="am-timeline__description">{{ item.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="am-skills-section">
+    <div class="am-container">
+      <h2 class="am-section-title">Fähigkeiten</h2>
+      <div class="am-skills">
+        <span class="am-skill">Embedded Systems</span>
+        <span class="am-skill">C / C++</span>
+        <span class="am-skill">Python</span>
+        <span class="am-skill">Bluetooth &amp; WiFi</span>
+        <span class="am-skill">IT-Beratung</span>
+        <span class="am-skill">Projektleitung</span>
+        <span class="am-skill">Radar</span>
+        <span class="am-skill">IIM</span>
+      </div>
+    </div>
+  </section>
+</div>
