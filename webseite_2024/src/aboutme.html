@@ -9,17 +9,20 @@ aboutmecss: true
   <!-- Hero Section -->
   <section class="am-hero">
     <div class="am-hero__container">
-      <img
-        src="/assets/images/Portrait.jpg"
-        alt="Portrait Tobias Gatschet"
-        class="am-hero__portrait"
-      />
+      <div class="am-hero__portrait-frame">
+        <img
+          src="/assets/images/Portrait.jpg"
+          alt="Portrait Tobias Gatschet"
+          class="am-hero__portrait"
+        />
+      </div>
       <div class="am-hero__content">
+        <div class="am-hero__eyebrow">Über mich</div>
         <h1 class="am-hero__name">Tobias Gatschet</h1>
-        <p class="am-hero__role">Consultant &amp; Engineer</p>
+        <p class="am-hero__role">Smart Energy Specialist &amp; Product Owner</p>
         <p class="am-hero__bio">
           Begeisterter Ingenieur mit Fokus auf innovative Technologien und
-          intelligente Informationssysteme
+          intelligente Informationssysteme. Ich verbinde technisches Know-how mit politischem Gestaltungswillen.
         </p>
       </div>
     </div>
@@ -50,11 +53,27 @@ aboutmecss: true
   <!-- Political Statement Section -->
   <section class="am-statement-section">
     <div class="am-container">
-      <h2 class="am-section-title">Meine politische Haltung</h2>
-      <div class="am-statement">
-        <p class="am-statement__text">
-          Ich bin ein innovationsorientierter Politiker der <strong>FDP</strong> mit Fokus auf pragmatische Lösungen und zukunftsorientierte Reformen. Mit dem Motto <em>"Wer handeln will, findet Wege"</em> setze ich mich für Prozessoptimierung, Nachhaltigkeitsziele und digitale Transformation ein – statt an alten Mustern festzuhalten. Ich glaube, dass echte Veränderung durch mutige Entscheidungen und neue Perspektiven entsteht, nicht durch endlose Diskussionen.
-        </p>
+      <div class="am-section-eyebrow">Meine politische Haltung</div>
+      <h2 class="am-section-title">Liberal, pragmatisch, zukunftsorientiert.</h2>
+      <div class="am-two-col">
+        <div>
+          <div class="am-statement">
+            <p class="am-statement__text">
+              Ich bin ein innovationsorientierter Politiker der <strong>FDP</strong> mit Fokus auf pragmatische Lösungen und zukunftsorientierte Reformen. Mit dem Motto <em>«Wer handeln will, findet Wege»</em> setze ich mich für Prozessoptimierung, Nachhaltigkeitsziele und digitale Transformation ein.
+            </p>
+          </div>
+          <p class="am-followup">Ich glaube, dass echte Veränderung durch mutige Entscheidungen und neue Perspektiven entsteht, nicht durch endlose Diskussionen.</p>
+        </div>
+        <div class="am-affiliation-cards">
+          <div class="am-affiliation-card am-affiliation-card--amber">
+            <div class="am-affiliation-card__name">Soleco</div>
+            <p class="am-affiliation-card__desc">Energiemanagement, Wärmepumpen und smarte Haustechnik</p>
+          </div>
+          <div class="am-affiliation-card am-affiliation-card--blue">
+            <div class="am-affiliation-card__name">FDP Schweiz</div>
+            <p class="am-affiliation-card__desc">Liberale Politik, wirtschaftliche Freiheit, starke Schweiz</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -62,12 +81,13 @@ aboutmecss: true
   <!-- Experience Timeline Section -->
   <section class="am-timeline-section">
     <div class="am-container">
+      <div class="am-section-eyebrow">Werdegang</div>
       <h2 class="am-section-title">Meine Reise</h2>
 
       <div class="am-timeline">
         {% for item in experience | reverse %}
           <div class="am-timeline__item">
-            <div class="am-timeline__marker {% if item.showYear %}am-timeline__marker--active{% endif %}">
+            <div class="am-timeline__marker">
               {% if item.showYear %}
                 <span class="am-timeline__year">{{ item.year }}</span>
               {% else %}

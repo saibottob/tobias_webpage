@@ -3,43 +3,73 @@ layout: layouts/base.html
 blogpostcss: true
 ---
 
-{% assign posts = collections.blog | sort: "date" | reverse %} {% assign
-prevPost = null %} {% assign nextPost = null %} {% for post in posts %} {% if
-post.url == page.url %} {% assign currentIndex = forloop.index0 %} {% assign
-prevIndex = currentIndex | plus: 1 %} {% assign nextIndex = currentIndex |
-minus: 1 %} {% if prevIndex < posts.size %} {% assign prevPost =
-posts[prevIndex] %} {% endif %} {% if nextIndex >= 0 %} {% assign nextPost =
-posts[nextIndex] %} {% endif %} {% break %} {% endif %} {% endfor %}
-
-<div class="blogpost-nav-outer">
-  {% if prevPost %}
-  <a href="{{ prevPost.url }}" class="post-nav-btn prev-post-link">
-    <span class="post-nav-arrow">&larr;</span>
-    <span class="post-nav-label">Vorheriger Beitrag</span>
-    <span class="post-nav-title">{{ prevPost.data.title }}</span>
-  </a>
-  {% endif %} {% if nextPost %}
-  <a href="{{ nextPost.url }}" class="post-nav-btn next-post-link">
-    <span class="post-nav-label">Nächster Beitrag</span>
-    <span class="post-nav-title">{{ nextPost.data.title }}</span>
-    <span class="post-nav-arrow">&rarr;</span>
-  </a>
+<!-- Post Hero Header -->
+<div class="post-hero">
+  {% if image %}
+  <img class="post-hero-bg" src="{{ image }}" alt="" />
+  {% else %}
+  <div class="post-hero-gradient post-hero-gradient--{{ kategorie | downcase }}"></div>
   {% endif %}
-</div>
-
-<article class="blogpost">
-  <a href="/blogs/" class="back-to-blog">&larr; Zurück zur Blogübersicht</a>
-  <div class="blogpost-header">
-    {% if image %}
-    <img src="{{ image }}" alt="{{ title }}" class="blogpost-hero-image" />
+  <div class="post-hero-overlay"></div>
+  <div class="post-hero-inner">
+    <a href="/blogs/" class="post-back-btn">← Zurück</a>
+    {% if kategorie %}
+    <span class="post-tag">{{ kategorie }}</span>
     {% endif %}
-    <h1 class="blogpost-title">{{ title }}</h1>
-    <div class="blogpost-meta">
-      <p class="blogpost-date">{{ date | date: "%d.%m.%Y" }}</p>
-      {% if kategorie %}
-      <span class="blogpost-category">{{ kategorie }}</span>
-      {% endif %}
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>Tobias Gatschet</span>
+      <span>·</span>
+      <span>{{ date | date: "%d.%m.%Y" }}</span>
     </div>
   </div>
-  <div class="blogpost-content">{{ content }}</div>
-</article>
+</div>
+
+<!-- Post Content -->
+<div class="post-body-wrapper">
+  <div class="post-body">
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <div class="post-author">
+      <div class="post-author-avatar">TG</div>
+      <div>
+        <div class="post-author-name">Tobias Gatschet</div>
+        <div class="post-author-role">Smart Energy &amp; FDP Schweiz</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- More Posts -->
+<section class="post-more">
+  <div class="post-more-inner">
+    <div class="post-more-hd">
+      <div class="post-more-eyebrow">Weitere Beiträge</div>
+      <h2 class="post-more-title">Das könnte dich auch interessieren</h2>
+    </div>
+    <div class="post-more-grid">
+      {% assign shown = 0 %}
+      {% for post in collections.blog %}
+        {% if post.url != page.url and shown < 3 %}
+          <article class="blog-card">
+            <a href="{{ post.url }}" class="blog-card-link">
+              <div class="blog-card-image blog-card-image--{{ post.data.kategorie | downcase }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
+                {% if post.data.kategorie %}<span class="blog-tag">{{ post.data.kategorie }}</span>{% endif %}
+              </div>
+              <div class="blog-card-body">
+                <h3 class="blog-card-title">{{ post.data.title }}</h3>
+                <p class="blog-card-desc">{{ post.data.description }}</p>
+                <div class="blog-card-meta">
+                  <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,21 +1,45 @@
 :root {
-  --color-primary: #003da5;
-  --color-primary-dark: #002d7d;
-  --color-accent: #f4c300;
-  --color-accent-light: #fef3c7;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #666;
-  --color-bg: #ffffff;
-  --color-bg-light: #f8f9fa;
-  --color-border: #e5e7eb;
+  /* New design system */
+  --blue:        #074EA1;
+  --blue-dark:   #003d85;
+  --blue-light:  #00A0E2;
+  --blue-pale:   #D6E8F7;
+  --amber:       #E8830A;
+  --amber-light: #F5B84C;
+  --amber-pale:  #FDF3E3;
+  --magenta:     #E8308A;
+  --ink:         #111111;
+  --ink-mid:     #5A5A5A;
+  --ink-muted:   #9A9A9A;
+  --bg:          #F7F5F0;
+  --surface:     #FFFFFF;
+  --border:      #E2DDD5;
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+  /* Legacy aliases */
+  --color-primary:        #074EA1;
+  --color-primary-dark:   #003d85;
+  --color-accent:         #E8830A;
+  --color-accent-light:   #FDF3E3;
+  --color-text:           #111111;
+  --color-text-secondary: #5A5A5A;
+  --color-bg:             #FFFFFF;
+  --color-bg-light:       #F7F5F0;
+  --color-border:         #E2DDD5;
+
+  /* Fonts */
+  --font-d: 'Barlow Condensed', sans-serif;
+  --font-b: 'DM Sans', sans-serif;
+  --font-m: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-xs:  0.5rem;
+  --spacing-sm:  1rem;
+  --spacing-md:  1.5rem;
+  --spacing-lg:  2rem;
+  --spacing-xl:  3rem;
   --spacing-2xl: 4rem;
 
+  /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;

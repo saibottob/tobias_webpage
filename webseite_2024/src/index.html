@@ -4,43 +4,145 @@ title: Tobias Gatschet
 homecss: true
 ---
 
-<header class="hero-header">
-  <img
-    src="/assets/images/Portrait.jpg"
-    alt="Tobias Gatschet"
-    class="hero-img"
-  />
-  <div class="hero-text">
-    <h1>Tobias Gatschet</h1>
-    <p class="hero-intro">
-      Willkommen auf meiner persönlichen Webseite. Ich bin Smart Energy Specialist &amp; Product Owner bei Soleco, arbeite an innovativen Energielösungen (EMS, Wärmepumpen, Batteriespeicher) und bin leidenschaftlicher Verfechter pragmatischer Reformen. Hier findest du mehr über mich, meine Gedanken zur Politik &amp; Innovation sowie aktuelle Blogbeiträge.
-    </p>
-  </div>
-</header>
+<!-- Hero -->
+<section class="hero-section">
+  <div class="hero-bg-image"></div>
+  <div class="hero-blob hero-blob--1"></div>
+  <div class="hero-blob hero-blob--2"></div>
+  <div class="hero-blob hero-blob--3"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-bg-text" aria-hidden="true">TG</div>
 
-<section class="latest-blogs">
-  <h2>Neueste Blogeinträge</h2>
-  <div class="blog-cards">
-    {% for post in collections.blog | reverse | slice(0,3) %}
-    <article class="blog-card">
-      <a href="{{ post.url }}" class="blog-card-link">
-        {% if post.data.image %}
-        <img
-          src="{{ post.data.image }}"
-          alt="{{ post.data.title }}"
-          class="blog-card-thumb"
-        />
-        {% endif %}
-        <div class="blog-card-header">
-          <h3 class="blog-card-title">{{ post.data.title }}</h3>
-          {% if post.data.kategorie %}
-          <span class="blog-card-category">{{ post.data.kategorie }}</span>
-          {% endif %}
+  <div class="hero-inner">
+    <!-- Left: Text -->
+    <div class="hero-left">
+      <div class="hero-eyebrow fade-up">
+        <span class="hero-eyebrow-dot"></span>
+        <span class="hero-eyebrow-text">Smart Energy · FDP · Schweiz</span>
+      </div>
+      <h1 class="hero-headline fade-up-2">
+        <span class="hero-line--white">Energie.</span>
+        <span class="hero-line--amber">Politik.</span>
+        <span class="hero-line--muted">Einblicke.</span>
+      </h1>
+      <div class="hero-desc-row fade-up-3">
+        <div class="hero-desc-divider"></div>
+        <p class="hero-desc-text">Smart Energy Specialist bei Soleco. FDP-Mitglied.<br>Pragmatischer Denker aus der Schweiz.</p>
+      </div>
+      <div class="hero-ctas fade-up-4">
+        <a href="/blogs" class="btn-hero-primary">Blog lesen →</a>
+        <a href="/aboutme" class="btn-hero-ghost">Über mich</a>
+      </div>
+    </div>
+
+    <!-- Right: Portrait + image -->
+    <div class="hero-right">
+      <div class="hero-portrait">
+        <img src="/assets/images/Portrait.jpg" alt="Tobias Gatschet" />
+        <div class="hero-portrait-overlay">
+          <div class="hero-portrait-name">Tobias Gatschet</div>
+          <div class="hero-portrait-sub">Smart Energy · FDP · CH</div>
         </div>
-        <span class="blog-date">{{ post.date | date: "%d.%m.%Y" }}</span>
-        <p class="blog-card-desc">{{ post.data.description }}</p>
-      </a>
-    </article>
-    {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Jahre Embedded Engineering</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">EMS</div>
+      <div class="stat-label">Energiemanagement-Expertise</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">FDP</div>
+      <div class="stat-label">Liberale Politik Schweiz</div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Section -->
+<section class="blog-section">
+  <div class="blog-section-hd">
+    <div>
+      <div class="blog-section-eyebrow">Aktuell</div>
+      <h2 class="blog-section-title">Neueste Beiträge</h2>
+    </div>
+    <a href="/blogs" class="btn-all-posts">Alle Beiträge →</a>
+  </div>
+
+  {% assign posts = collections.blog %}
+  <div class="blog-grid">
+    <!-- Featured post -->
+    {% assign featured = posts | first %}
+    {% if featured %}
+    <div class="blog-grid__featured">
+      <article class="blog-card blog-card--large">
+        <a href="{{ featured.url }}" class="blog-card-link">
+          <div class="blog-card-image blog-card-image--large"{% if featured.data.image %} style="background-image:url('{{ featured.data.image }}');background-size:cover;background-position:center"{% endif %}>
+            {% if featured.data.kategorie %}<span class="blog-tag">{{ featured.data.kategorie }}</span>{% endif %}
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">{{ featured.data.title }}</h3>
+            <p class="blog-card-desc">{{ featured.data.description }}</p>
+            <div class="blog-card-meta">
+              <span>{{ featured.date | date: "%d.%m.%Y" }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    {% endif %}
+
+    <!-- Side posts (next 2) -->
+    <div class="blog-grid__side">
+      {% for post in posts limit:3 %}
+      {% unless forloop.first %}
+      <article class="blog-card">
+        <a href="{{ post.url }}" class="blog-card-link">
+          <div class="blog-card-image"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
+            {% if post.data.kategorie %}<span class="blog-tag">{{ post.data.kategorie }}</span>{% endif %}
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">{{ post.data.title }}</h3>
+            <p class="blog-card-desc">{{ post.data.description }}</p>
+            <div class="blog-card-meta">
+              <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About Strip -->
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-strip-left">
+      <div class="about-strip-eyebrow">Über mich</div>
+      <h2 class="about-strip-title">Technik trifft<br><span>Politik.</span></h2>
+      <p class="about-strip-desc">Ich verbinde Expertise in Smart Energy mit politischem Engagement bei der FDP — mit dem Ziel, die Schweiz effizienter und freier zu gestalten.</p>
+      <a href="/aboutme" class="btn-about-strip">Mehr über mich →</a>
+    </div>
+    <div class="about-strip-pillars">
+      <div class="about-pillar">
+        <div class="about-pillar-icon">⚡</div>
+        <div class="about-pillar-label">Smart Energy</div>
+        <div class="about-pillar-desc">Specialist bei Soleco — Energiemanagement &amp; Embedded Systems</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">🗳</div>
+        <div class="about-pillar-label">FDP Schweiz</div>
+        <div class="about-pillar-desc">Liberale Politik für eine freie und nachhaltige Schweiz</div>
+      </div>
+    </div>
   </div>
 </section>
