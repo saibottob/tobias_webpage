@@ -34,7 +34,12 @@ posts[nextIndex] %} {% endif %} {% break %} {% endif %} {% endfor %}
     <img src="{{ image }}" alt="{{ title }}" class="blogpost-hero-image" />
     {% endif %}
     <h1 class="blogpost-title">{{ title }}</h1>
-    <p class="blogpost-date">{{ date | date: "%d.%m.%Y" }}</p>
+    <div class="blogpost-meta">
+      <p class="blogpost-date">{{ date | date: "%d.%m.%Y" }}</p>
+      {% if kategorie %}
+      <span class="blogpost-category">{{ kategorie }}</span>
+      {% endif %}
+    </div>
   </div>
   <div class="blogpost-content">{{ content }}</div>
 </article>

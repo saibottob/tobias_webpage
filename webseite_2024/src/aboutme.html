@@ -47,6 +47,18 @@ aboutmecss: true
     </div>
   </section>
 
+  <!-- Political Statement Section -->
+  <section class="am-statement-section">
+    <div class="am-container">
+      <h2 class="am-section-title">Meine politische Haltung</h2>
+      <div class="am-statement">
+        <p class="am-statement__text">
+          Ich bin ein innovationsorientierter Politiker der <strong>FDP</strong> mit Fokus auf pragmatische Lösungen und zukunftsorientierte Reformen. Mit dem Motto <em>"Wer handeln will, findet Wege"</em> setze ich mich für Prozessoptimierung, Nachhaltigkeitsziele und digitale Transformation ein – statt an alten Mustern festzuhalten. Ich glaube, dass echte Veränderung durch mutige Entscheidungen und neue Perspektiven entsteht, nicht durch endlose Diskussionen.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Experience Timeline Section -->
   <section class="am-timeline-section">
     <div class="am-container">
@@ -78,14 +90,9 @@ aboutmecss: true
     <div class="am-container">
       <h2 class="am-section-title">Fähigkeiten</h2>
       <div class="am-skills">
-        <span class="am-skill">Embedded Systems</span>
-        <span class="am-skill">C / C++</span>
-        <span class="am-skill">Python</span>
-        <span class="am-skill">Bluetooth &amp; WiFi</span>
-        <span class="am-skill">IT-Beratung</span>
-        <span class="am-skill">Projektleitung</span>
-        <span class="am-skill">Radar</span>
-        <span class="am-skill">IIM</span>
+        {% for skill in skills %}
+        <span class="am-skill">{{ skill.name }}</span>
+        {% endfor %}
       </div>
     </div>
   </section>

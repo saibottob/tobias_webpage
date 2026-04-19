@@ -13,10 +13,7 @@ homecss: true
   <div class="hero-text">
     <h1>Tobias Gatschet</h1>
     <p class="hero-intro">
-      Willkommen auf meiner persönlichen Webseite. Ich bin Consultant &amp;
-      Projektleiter für Intelligent Information Management, leidenschaftlicher
-      Entwickler und Technikbegeisterter. Hier findest du mehr über mich, meine
-      Projekte und aktuelle Blogbeiträge.
+      Willkommen auf meiner persönlichen Webseite. Ich bin Smart Energy Specialist &amp; Product Owner bei Soleco, arbeite an innovativen Energielösungen (EMS, Wärmepumpen, Batteriespeicher) und bin leidenschaftlicher Verfechter pragmatischer Reformen. Hier findest du mehr über mich, meine Gedanken zur Politik &amp; Innovation sowie aktuelle Blogbeiträge.
     </p>
   </div>
 </header>
@@ -34,7 +31,12 @@ homecss: true
           class="blog-card-thumb"
         />
         {% endif %}
-        <h3 class="blog-card-title">{{ post.data.title }}</h3>
+        <div class="blog-card-header">
+          <h3 class="blog-card-title">{{ post.data.title }}</h3>
+          {% if post.data.kategorie %}
+          <span class="blog-card-category">{{ post.data.kategorie }}</span>
+          {% endif %}
+        </div>
         <span class="blog-date">{{ post.date | date: "%d.%m.%Y" }}</span>
         <p class="blog-card-desc">{{ post.data.description }}</p>
       </a>
