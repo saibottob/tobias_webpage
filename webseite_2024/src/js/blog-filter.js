@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cards.forEach(function (card) {
       const category = card.getAttribute('data-category');
-      const show = activeCategory === 'all' || category === activeCategory;
+      const show = activeCategory === 'all' || (category || '').toLowerCase() === activeCategory.toLowerCase();
 
       card.style.display = show ? '' : 'none';
       if (show) visible++;

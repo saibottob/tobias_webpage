@@ -7,6 +7,7 @@ permalink: "/blog/1-august-schweiz/"
 image: /assets/images/blogposts/1august.png
 tags: blog
 kategorie: politik
+blogpostcss: true
 ---
 
 Es ist kein Geheimnis: Die Schweiz steht im Moment vor grossen Herausforderungen. «Strafzölle» aus den USA, zähe Verhandlungen mit der EU, dazu viele Baustellen im eigenen Land. Aber genau jetzt ist es wichtig, dass wir uns daran erinnern, was uns stark macht und wir als Schweiz zusammenstehen!
