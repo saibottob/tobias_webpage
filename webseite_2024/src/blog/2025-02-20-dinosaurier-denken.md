@@ -10,7 +10,7 @@ kategorie: Innovation
 blogpostcss: true
 ---
 
-# Schluss mit Dinosaurier-Denken!
+## Schluss mit Dinosaurier-Denken!
 
 > Wer heute noch sagt „Das haben wir immer schon so gemacht", wird morgen zum Fossil.
 

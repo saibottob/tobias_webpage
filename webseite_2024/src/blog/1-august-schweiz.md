@@ -6,7 +6,7 @@ description: Die Schweiz steht vor grossen Herausforderungen – doch genau jetz
 permalink: "/blog/1-august-schweiz/"
 image: /assets/images/blogposts/1august.png
 tags: blog
-kategorie: politik
+kategorie: Politik
 blogpostcss: true
 ---
 

@@ -10,8 +10,8 @@ kategorie: Politik
 blogpostcss: true
 ---
 
-# Wer handeln will, findet Wege.
-# Wer nicht handeln will, findet Gründe.
+## Wer handeln will, findet Wege.
+## Wer nicht handeln will, findet Gründe.
 
 > Fortschritt entsteht durch Handeln – nicht durch endlose Diskussionen.
 

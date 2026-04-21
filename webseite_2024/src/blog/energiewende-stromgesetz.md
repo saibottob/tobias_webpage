@@ -6,7 +6,7 @@ description: Die Energiewende braucht rasch ausbaubare erneuerbare Energien – 
 permalink: "/blog/energiewende-stromgesetz/"
 image: /assets/images/blogposts/energiegesetz.png
 tags: blog
-kategorie: politik
+kategorie: Politik
 ---
 
 Wir brauchen Strom, wenn wir die Energiewende schaffen wollen. Und wir brauchen ihn in den nächsten Jahren.
