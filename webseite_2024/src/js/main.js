@@ -5,7 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (burgerMenu && navLinks) {
     burgerMenu.addEventListener('click', function () {
-      navLinks.classList.toggle('active');
+      const isActive = navLinks.classList.toggle('active');
+
+      // Disable/enable scroll when menu is open
+      if (isActive) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
   }
 
