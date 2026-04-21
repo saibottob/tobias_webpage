@@ -10,11 +10,17 @@ kategorie: Politik
 blogpostcss: true
 ---
 
+## Die Herausforderungen erkennen und annehmen
+
 Es ist kein Geheimnis: Die Schweiz steht im Moment vor grossen Herausforderungen. «Strafzölle» aus den USA, zähe Verhandlungen mit der EU, dazu viele Baustellen im eigenen Land. Aber genau jetzt ist es wichtig, dass wir uns daran erinnern, was uns stark macht und wir als Schweiz zusammenstehen!
+
+## Unsere Stärken: Köpfe statt Bodenschätze
 
 Unser Land hat keine riesigen Bodenschätze wie andere. Unser Reichtum steckt in unseren Köpfen, unseren Ideen und unserer Art, Dinge anzupacken. Wir haben hervorragende Universitäten, Weltfirmen, kluge Köpfe, ein Ausbildungssystem, um das uns viele beneiden und unzählige Innovationen, die ihren Weg hinaus in die Welt finden.
 
 All das dürfen wir nicht als selbstverständlich hinnehmen. Darauf müssen wir achten, das müssen wir pflegen und weiter stärken. Es braucht uns alle, um dafür zu kämpfen. Wir dürfen stolz auf unser Land sein und das auch zeigen.
+
+## Unabhängigkeit bewahren durch Selbstbestimmung
 
 Wir lassen uns nicht von irgendwelchen Staaten oder anderen Menschen vorschreiben, wer wir zu sein sind. Wir entscheiden selbst, was uns wichtig ist, mit Sachlichkeit, mit Weitsicht, mit Toleranz und dem Willen, Kompromisse zu finden. Wir müssen wieder mehr zusammen sitzen, diskutieren, Lösungen suchen, statt uns zu verstecken. Es ist Zeit, dass wir uns nicht ständig von anderen sagen lassen, wie wir zu funktionieren haben.
 

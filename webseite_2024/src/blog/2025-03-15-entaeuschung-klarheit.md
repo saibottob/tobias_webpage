@@ -10,8 +10,7 @@ kategorie: Perspektiven
 blogpostcss: true
 ---
 
-## Enttäuschung ist das Ende der Illusion
-## und der Anfang von Klarheit
+## Enttäuschung ist das Ende der Illusion und der Anfang von Klarheit
 
 > Die Realität ist anders als erhofft. Das ist nicht das Ende – das ist der Anfang.
 
