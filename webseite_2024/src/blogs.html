@@ -24,7 +24,7 @@ blogscss: true
 <div class="blog-grid-wrapper">
   <div class="blog-grid-inner">
     <div class="blog-post-grid" id="blog-post-grid">
-      {% assign posts = collections.blog %}
+      {% set posts = collections.blog %}
       {% for post in posts %}
       <article
         class="blog-card"
@@ -33,7 +33,7 @@ blogscss: true
         data-description="{{ post.data.description }}"
       >
         <a href="{{ post.url }}" class="blog-card-link">
-          <div class="blog-card-image blog-card-image--{{ post.data.kategorie | downcase }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
+          <div class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
             {% if post.data.kategorie %}
             <span class="blog-tag">{{ post.data.kategorie }}</span>
             {% endif %}
