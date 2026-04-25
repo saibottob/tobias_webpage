@@ -1,0 +1,47 @@
+:root {
+  /* FDP Switzerland Branding */
+  --blue:        #003da5;
+  --blue-dark:   #002d7d;
+  --blue-light:  #074EA1;
+  --blue-pale:   #E8F0F7;
+  --amber:       #f4c300;
+  --amber-light: #F8D960;
+  --amber-pale:  #FEF8E8;
+  --magenta:     #E8308A;
+  --ink:         #1a1a1a;
+  --ink-mid:     #666;
+  --ink-muted:   #999;
+  --bg:          #ffffff;
+  --surface:     #FFFFFF;
+  --border:      #E2DDD5;
+
+  /* Legacy aliases - FDP Colors */
+  --color-primary:        #003da5;
+  --color-primary-dark:   #002d7d;
+  --color-accent:         #f4c300;
+  --color-accent-light:   #FEF8E8;
+  --color-text:           #1a1a1a;
+  --color-text-secondary: #666;
+  --color-bg:             #ffffff;
+  --color-bg-light:       #f8f9fa;
+  --color-border:         #E2DDD5;
+
+  /* Fonts */
+  --font-d: 'Barlow Condensed', sans-serif;
+  --font-b: 'DM Sans', sans-serif;
+  --font-m: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-xs:  0.5rem;
+  --spacing-sm:  1rem;
+  --spacing-md:  1.5rem;
+  --spacing-lg:  2rem;
+  --spacing-xl:  3rem;
+  --spacing-2xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.5rem;
+}

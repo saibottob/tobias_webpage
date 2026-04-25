@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Soleco",
+    "period": "Oktober 2025 - Heute",
+    "startDate": "2025-10-01",
+    "year": 2026,
+    "position": "Smart Energy Specialist | Product Owner & Project Lead",
+    "description": "Entwicklung von Energy Management System (EMS) und Installation von Wärmepumpen, Batteriespeichern und Ladestationen. Verantwortung für Product Ownership und Projektleitung von Smart-Grid Lösungen.",
+    "showYear": true
+  },
+  {
+    "title": "CENT Systems AG",
+    "period": "Juli 2025 - September 2025",
+    "startDate": "2025-07-01",
+    "year": 2025,
+    "position": "Consultant / Projektleiter IIM",
+    "description": "Consultant / Projektleiter IIM - Intelligent Information Management",
+    "showYear": true
+  },
+  {
+    "title": "QUMEA AG",
+    "period": "Juni 2021 - Juli 2025",
+    "startDate": "2021-06-01",
+    "year": 2021,
+    "position": "Embedded Engineer",
+    "description": "Embedded Engineer - Entwicklung von Sensorsoftware (Bluetooth / WiFi / Radar)",
+    "showYear": false
+  },
+  {
+    "title": "AWK Group AG",
+    "period": "Juni 2020",
+    "startDate": "2020-06-01",
+    "year": 2020,
+    "position": "Junior Consultant IT Beratung",
+    "description": "Junior Consultant IT Beratung",
+    "showYear": false
+  },
+  {
+    "title": "Master ETH Zürich",
+    "period": "Mai 2020",
+    "startDate": "2020-05-01",
+    "year": 2020,
+    "position": "Elektroingenieur",
+    "description": "Elektroingenieur - Masterthesis: Event-triggered Multi-hop Communication for Wireless Sensor Networks",
+    "showYear": true
+  },
+  {
+    "title": "Bachelor ETH Zürich",
+    "period": "August 2018",
+    "startDate": "2018-08-01",
+    "year": 2018,
+    "position": "Elektroingenieur",
+    "description": "Elektroingenieur",
+    "showYear": true
+  },
+  {
+    "title": "Zircel",
+    "period": "2017 - 2020",
+    "startDate": "2017-01-01",
+    "year": 2017,
+    "position": "Web Framework Development",
+    "description": "Aufbau eines Webframeworks für Webseiten im Stil einer Konversation",
+    "showYear": true
+  }
+]
