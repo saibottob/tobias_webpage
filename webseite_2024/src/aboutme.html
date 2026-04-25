@@ -85,7 +85,7 @@ aboutmecss: true
       <h2 class="am-section-title">Meine Reise</h2>
 
       <div class="am-timeline">
-        {% for item in experience | reverse %}
+        {% for item in experience %}
           <div class="am-timeline__item">
             <div class="am-timeline__marker">
               {% if item.showYear %}

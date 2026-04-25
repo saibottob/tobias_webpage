@@ -12,10 +12,15 @@ blogscss: true
     <h1 class="blog-header-title">Blog</h1>
     <div class="blog-filter-pills">
       <button class="blog-pill active" data-category="all">Alle</button>
+      <button class="blog-pill" data-category="Technik">Technik</button>
       <button class="blog-pill" data-category="Politik">Politik</button>
       <button class="blog-pill" data-category="Innovation">Innovation</button>
-      <button class="blog-pill" data-category="Nachhaltigkeit">Nachhaltigkeit</button>
-      <button class="blog-pill" data-category="Perspektiven">Perspektiven</button>
+      <button class="blog-pill" data-category="Nachhaltigkeit">
+        Nachhaltigkeit
+      </button>
+      <button class="blog-pill" data-category="Perspektiven">
+        Perspektiven
+      </button>
     </div>
   </div>
 </div>
@@ -24,8 +29,7 @@ blogscss: true
 <div class="blog-grid-wrapper">
   <div class="blog-grid-inner">
     <div class="blog-post-grid" id="blog-post-grid">
-      {% assign posts = collections.blog %}
-      {% for post in posts %}
+      {% set posts = collections.blog %} {% for post in posts %}
       <article
         class="blog-card"
         data-category="{{ post.data.kategorie }}"
@@ -33,7 +37,17 @@ blogscss: true
         data-description="{{ post.data.description }}"
       >
         <a href="{{ post.url }}" class="blog-card-link">
-          <div class="blog-card-image blog-card-image--{{ post.data.kategorie | downcase }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
+          <div
+            class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"
+            {%
+            if
+            post.data.image
+            %}
+            style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"
+            {%
+            endif
+            %}
+          >
             {% if post.data.kategorie %}
             <span class="blog-tag">{{ post.data.kategorie }}</span>
             {% endif %}
@@ -44,7 +58,7 @@ blogscss: true
             <p class="blog-card-desc">{{ post.data.description }}</p>
             {% endif %}
             <div class="blog-card-meta">
-              <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+              <span>{{ post.date | date("dd.MM.yyyy") }}</span>
             </div>
           </div>
         </a>
@@ -52,7 +66,7 @@ blogscss: true
       {% endfor %}
     </div>
 
-    <div class="blog-empty-state" id="blog-empty-state" style="display:none">
+    <div class="blog-empty-state" id="blog-empty-state" style="display: none">
       <p>Keine Beiträge für diese Kategorie gefunden.</p>
     </div>
   </div>

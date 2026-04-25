@@ -76,10 +76,10 @@ homecss: true
     <a href="/blogs" class="btn-all-posts">Alle Beiträge →</a>
   </div>
 
-  {% assign posts = collections.blog %}
+  {% set posts = collections.blog %}
   <div class="blog-grid">
     <!-- Featured post -->
-    {% assign featured = posts | first %}
+    {% set featured = posts[0] %}
     {% if featured %}
     <div class="blog-grid__featured">
       <article class="blog-card blog-card--large">
@@ -91,7 +91,7 @@ homecss: true
             <h3 class="blog-card-title">{{ featured.data.title }}</h3>
             <p class="blog-card-desc">{{ featured.data.description }}</p>
             <div class="blog-card-meta">
-              <span>{{ featured.date | date: "%d.%m.%Y" }}</span>
+              <span>{{ featured.date | date("dd.MM.yyyy") }}</span>
             </div>
           </div>
         </a>
@@ -101,8 +101,8 @@ homecss: true
 
     <!-- Side posts (next 2) -->
     <div class="blog-grid__side">
-      {% for post in posts limit:3 %}
-      {% unless forloop.first %}
+      {% for post in posts | limit(3) %}
+      {% if not loop.first %}
       <article class="blog-card">
         <a href="{{ post.url }}" class="blog-card-link">
           <div class="blog-card-image"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
@@ -112,12 +112,12 @@ homecss: true
             <h3 class="blog-card-title">{{ post.data.title }}</h3>
             <p class="blog-card-desc">{{ post.data.description }}</p>
             <div class="blog-card-meta">
-              <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+              <span>{{ post.date | date("dd.MM.yyyy") }}</span>
             </div>
           </div>
         </a>
       </article>
-      {% endunless %}
+      {% endif %}
       {% endfor %}
     </div>
   </div>

@@ -8,7 +8,7 @@ blogpostcss: true
   {% if image %}
   <img class="post-hero-bg" src="{{ image }}" alt="" />
   {% else %}
-  <div class="post-hero-gradient post-hero-gradient--{{ kategorie | downcase }}"></div>
+  <div class="post-hero-gradient post-hero-gradient--{{ kategorie | lower }}"></div>
   {% endif %}
   <div class="post-hero-overlay"></div>
   <div class="post-hero-inner">
@@ -20,7 +20,7 @@ blogpostcss: true
     <div class="post-meta">
       <span>Tobias Gatschet</span>
       <span>·</span>
-      <span>{{ date | date: "%d.%m.%Y" }}</span>
+      <span>{{ date | date("dd.MM.yyyy") }}</span>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@ blogpostcss: true
 <div class="post-body-wrapper">
   <div class="post-body">
     <div class="post-content">
-      {{ content }}
+      {{ content | safe }}
     </div>
 
     <div class="post-author">
@@ -50,24 +50,22 @@ blogpostcss: true
       <h2 class="post-more-title">Das könnte dich auch interessieren</h2>
     </div>
     <div class="post-more-grid">
-      {% assign shown = 0 %}
-      {% for post in collections.blog %}
-        {% if post.url != page.url and shown < 3 %}
+      {% for post in collections.blog | limit(4) %}
+        {% if post.url != page.url %}
           <article class="blog-card">
             <a href="{{ post.url }}" class="blog-card-link">
-              <div class="blog-card-image blog-card-image--{{ post.data.kategorie | downcase }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
+              <div class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
                 {% if post.data.kategorie %}<span class="blog-tag">{{ post.data.kategorie }}</span>{% endif %}
               </div>
               <div class="blog-card-body">
                 <h3 class="blog-card-title">{{ post.data.title }}</h3>
                 <p class="blog-card-desc">{{ post.data.description }}</p>
                 <div class="blog-card-meta">
-                  <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+                  <span>{{ post.date | date("dd.MM.yyyy") }}</span>
                 </div>
               </div>
             </a>
           </article>
-          {% assign shown = shown | plus: 1 %}
         {% endif %}
       {% endfor %}
     </div>
