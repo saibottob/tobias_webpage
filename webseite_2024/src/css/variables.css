@@ -1,29 +1,29 @@
 :root {
-  /* New design system */
-  --blue:        #074EA1;
-  --blue-dark:   #003d85;
-  --blue-light:  #00A0E2;
-  --blue-pale:   #D6E8F7;
-  --amber:       #E8830A;
-  --amber-light: #F5B84C;
-  --amber-pale:  #FDF3E3;
+  /* FDP Switzerland Branding */
+  --blue:        #003da5;
+  --blue-dark:   #002d7d;
+  --blue-light:  #074EA1;
+  --blue-pale:   #E8F0F7;
+  --amber:       #f4c300;
+  --amber-light: #F8D960;
+  --amber-pale:  #FEF8E8;
   --magenta:     #E8308A;
-  --ink:         #111111;
-  --ink-mid:     #5A5A5A;
-  --ink-muted:   #9A9A9A;
-  --bg:          #F7F5F0;
+  --ink:         #1a1a1a;
+  --ink-mid:     #666;
+  --ink-muted:   #999;
+  --bg:          #ffffff;
   --surface:     #FFFFFF;
   --border:      #E2DDD5;
 
-  /* Legacy aliases */
-  --color-primary:        #074EA1;
-  --color-primary-dark:   #003d85;
-  --color-accent:         #E8830A;
-  --color-accent-light:   #FDF3E3;
-  --color-text:           #111111;
-  --color-text-secondary: #5A5A5A;
-  --color-bg:             #FFFFFF;
-  --color-bg-light:       #F7F5F0;
+  /* Legacy aliases - FDP Colors */
+  --color-primary:        #003da5;
+  --color-primary-dark:   #002d7d;
+  --color-accent:         #f4c300;
+  --color-accent-light:   #FEF8E8;
+  --color-text:           #1a1a1a;
+  --color-text-secondary: #666;
+  --color-bg:             #ffffff;
+  --color-bg-light:       #f8f9fa;
   --color-border:         #E2DDD5;
 
   /* Fonts */

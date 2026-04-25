@@ -7,10 +7,24 @@ document.addEventListener('DOMContentLoaded', function () {
     burgerMenu.addEventListener('click', function () {
       const isActive = navLinks.classList.toggle('active');
 
+      // Update aria-expanded and aria-label
+      burgerMenu.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      burgerMenu.setAttribute('aria-label', isActive ? 'Menü schliessen' : 'Menü öffnen');
+
       // Disable/enable scroll when menu is open
       if (isActive) {
         document.body.style.overflow = 'hidden';
       } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Reset menu on resize (e.g., going from mobile to desktop)
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) {
+        navLinks.classList.remove('active');
+        burgerMenu.setAttribute('aria-expanded', 'false');
+        burgerMenu.setAttribute('aria-label', 'Menü öffnen');
         document.body.style.overflow = '';
       }
     });

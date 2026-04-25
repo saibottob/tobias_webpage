@@ -45,6 +45,16 @@ Persönliche Reflexionen, philosophische Gedanken und Lebensweisheiten.
 
 ---
 
+### ⚙️ Technik
+
+Technische Artikel, Smart Energy, Embedded Systems und technologische Insights.
+
+**Posts:**
+
+- Batteriespeicher – Warum die richtige Dimensionierung entscheidend ist (2026-04-22)
+
+---
+
 ## Hinzufügen neuer Kategorien
 
 Um eine neue Kategorie hinzuzufügen:
@@ -57,4 +67,6 @@ Um eine neue Kategorie hinzuzufügen:
 
 - Kategorien werden im Markdown-Frontmatter der Blog-Posts definiert
 - Format: `kategorie: KategorieName` (Groß- und Kleinschreibung beachten)
-- Filter und Anzeige können später im Blog-Listing implementiert werden
+- Filter und Anzeige sind im Blog-Listing implementiert (`/blogs`) mit interaktiven Kategorie-Pills
+- Styling für Kategorien ist in `/css/blogs.css` definiert
+

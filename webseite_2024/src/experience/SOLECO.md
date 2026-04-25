@@ -5,7 +5,7 @@
 **Smart Energy Specialist | Product Owner & Project Lead**
 
 - **Firma:** Soleco
-- **Start:** 2026
+- **Start:** Oktober 2025
 - **Fokus:** Smart Grid & Energy Management Solutions
 
 ## Aufgaben
@@ -36,7 +36,7 @@
 - Projektleitung & Consulting (aus CENT Systems & AWK)
 - Technische Expertise in Energiesystemen
 - IoT & Connected Systems
-- PO/PL Methodeken
+- PO/PL Methodiken
 
 ## Verbindung zu früheren Rollen
 

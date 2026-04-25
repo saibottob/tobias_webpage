@@ -20,11 +20,11 @@ Und genau hier liegt das Problem:
 
 Eine Mehrwertsteuer-Erhöhung kommt nicht in Frage. Denn sie bedeutet, dass alles noch teurer wird. Vom täglichen Einkauf bis hin zu Dienstleistungen – wir alle spüren bereits jetzt, dass das Leben immer kostspieliger wird.
 
-Eine AHV-Rente, die mehr auszahlt, aber gleichzeitig durch höhere Preise wieder aufgefresssen wird, ist nichts anderes als ein **Nullsummenspiel**. Am Ende bezahlen wir mehr, ohne dass jemand wirklich profitiert.
+Eine AHV-Rente, die mehr auszahlt, aber gleichzeitig durch höhere Preise wieder aufgefressen wird, ist nichts anderes als ein **Nullsummenspiel**. Am Ende bezahlen wir mehr, ohne dass jemand wirklich profitiert.
 
 ## Die echte Lösung: AHV-Reform
 
-Dazu kommt: AHV-Reformen sind politisch extrem schwer durchzubringen. Dass bis 2030 eine echte Überganslösung ohne Plan B darf deshalb nicht der Weg sein.
+Dazu kommt: AHV-Reformen sind politisch extrem schwer durchzubringen. Dass bis 2030 eine echte Übergangslösung ohne Plan B darf deshalb nicht der Weg sein.
 
 ## Meine Forderung
 
