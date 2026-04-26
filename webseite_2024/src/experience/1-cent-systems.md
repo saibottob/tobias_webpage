@@ -26,7 +26,7 @@ Bei CENT Systems AG lag mein Schwerpunkt auf Intelligent Information Management 
 
 ## Aufgaben
 
-- Analyse bestehender Informationsfluesse und Identifikation von Optimierungspotenzial
+- Analyse bestehender Informationsflüsse und Identifikation von Optimierungspotenzial
 - Übersetzung fachlicher Anforderungen in technische und organisatorische Lösungsbausteine
 - Planung und Steuerung von Teilprojekten inklusive Abstimmung mit relevanten Stakeholdern
 
@@ -34,6 +34,6 @@ Bei CENT Systems AG lag mein Schwerpunkt auf Intelligent Information Management 
 
 Im Fokus stand eine bessere Nachvollziehbarkeit von Prozessen, klarere Verantwortlichkeiten und eine praxisnahe Umsetzung im Tagesgeschäft.
 
-## Verbindung zu frueheren Rollen
+## Verbindung zu früheren Rollen
 
 Die Kombination aus technischer Denke (QUMEA) und Beratungsstruktur (AWK) hat hier besonders geholfen, schnell wirksame Lösungen zu entwickeln.

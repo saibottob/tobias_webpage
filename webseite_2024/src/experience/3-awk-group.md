@@ -26,9 +26,9 @@ Bei AWK Group AG sammelte ich früh praktische Erfahrung in der IT-Beratung. Der
 ## Aufgaben
 
 - Mitarbeit in Beratungsmandaten mit technischem und organisatorischem Fokus
-- Unterstuetzung bei Anforderungsaufnahme und Strukturierung von Handlungsoptionen
-- Erstellung und Aufbereitung von Entscheidungsgrundlagen fuer Projektteams
+- Unterstützung bei Anforderungsaufnahme und Strukturierung von Handlungsoptionen
+- Erstellung und Aufbereitung von Entscheidungsgrundlagen für Projektteams
 
 ## Wirkung
 
-Die Rolle hat mein methodisches Arbeiten geschaerft und ein solides Fundament fuer spaetere Projekt- und Produktverantwortung gelegt.
+Die Rolle hat mein methodisches Arbeiten geschärft und ein solides Fundament für spätere Projekt- und Produktverantwortung gelegt.

@@ -30,6 +30,6 @@ Im Masterstudium an der ETH Zürich stand die Vertiefung in Elektrotechnik und v
 - Ziel: Kommunikationsereignisse gezielt auslösen, um Ressourcen effizient zu nutzen
 - Ergebnis: Solider methodischer Unterbau für spätere Arbeit in IoT- und Embedded-Umfeldern
 
-## Relevanz fuer den weiteren Weg
+## Relevanz für den weiteren Weg
 
 Die Kombination aus Theorie, Systemdenken und praktischer Problemstrukturierung bildet bis heute die Grundlage für meine technische Arbeit in Produkt- und Integrationsprojekten.

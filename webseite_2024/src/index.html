@@ -86,10 +86,7 @@ homecss: true
   {% set posts = collections.blog %}
   <div class="blog-grid">
     <!-- Featured post -->
-    {% set featured = posts[0] %} {% set featuredCategoryLabel =
-    featured.data.kategorie if featured else "" %} {% if featured and
-    featured.data.kategorie == "Politik" %}{% set featuredCategoryLabel =
-    "Gesellschaft" %}{% endif %} {% if featured %}
+    {% set featured = posts[0] %} {% if featured %}
     <div class="blog-grid__featured">
       <article class="blog-card blog-card--large">
         <a href="{{ featured.url }}" class="blog-card-link">
@@ -105,7 +102,7 @@ homecss: true
             %}
           >
             {% if featured.data.kategorie %}<span class="blog-tag"
-              >{{ featuredCategoryLabel }}</span
+              >{{ featured.data.kategorie | displayCategory }}</span
             >{% endif %}
           </div>
           <div class="blog-card-body">
@@ -122,9 +119,7 @@ homecss: true
 
     <!-- Side posts (next 2) -->
     <div class="blog-grid__side">
-      {% for post in posts | limit(3) %} {% if not loop.first %} {% set
-      sideCategoryLabel = post.data.kategorie %} {% if post.data.kategorie ==
-      "Politik" %}{% set sideCategoryLabel = "Gesellschaft" %}{% endif %}
+      {% for post in posts | limit(3) %} {% if not loop.first %}
       <article class="blog-card">
         <a href="{{ post.url }}" class="blog-card-link">
           <div
@@ -139,7 +134,7 @@ homecss: true
             %}
           >
             {% if post.data.kategorie %}<span class="blog-tag"
-              >{{ sideCategoryLabel }}</span
+              >{{ post.data.kategorie | displayCategory }}</span
             >{% endif %}
           </div>
           <div class="blog-card-body">

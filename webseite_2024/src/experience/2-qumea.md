@@ -18,7 +18,7 @@ xpSkills:
   - Embedded Entwicklung
   - Sensorfusion
   - Performance-Optimierung
-  - Interdisziplinaere Zusammenarbeit
+  - Interdisziplinäre Zusammenarbeit
 ---
 
 ## Rolle und Kontext
@@ -27,7 +27,7 @@ Bei QUMEA AG habe ich als Embedded Engineer an sensornahen Softwarekomponenten g
 
 ## Aufgaben
 
-- Entwicklung und Wartung von Firmware-Komponenten fuer drahtlose Sensorik
+- Entwicklung und Wartung von Firmware-Komponenten für drahtlose Sensorik
 - Arbeit an Kommunikationspfaden über Bluetooth und WiFi
 - Unterstützung bei Test- und Validierungsabläufen für robuste Releases
 - Enge Zusammenarbeit mit Produkt, Hardware und weiteren Engineering-Bereichen
@@ -39,6 +39,6 @@ Bei QUMEA AG habe ich als Embedded Engineer an sensornahen Softwarekomponenten g
 - Radar-nahe Datenauswertung
 - Test- und Qualitätssicherung in Entwicklungszyklen
 
-## Verbindung zu spaeteren Rollen
+## Verbindung zu späteren Rollen
 
 Das tiefere Verständnis für hardware-nahe Systeme war eine zentrale Grundlage für meine spätere Arbeit in Smart-Energy-Integrationen und Produktverantwortung.

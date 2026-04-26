@@ -131,31 +131,26 @@ aboutmecss: true
       <h2 class="am-section-title">Meine Reise</h2>
 
       <div class="am-timeline">
-        {% for item in experience %}
+        {% set experienceItems = collections.experience %} {% for item in
+        experienceItems %}
         <div class="am-timeline__item">
           <div class="am-timeline__marker">
-            {% if item.showYear %}
-            <span class="am-timeline__year">{{ item.year }}</span>
+            {% if item.data.year %}
+            <span class="am-timeline__year">{{ item.data.year }}</span>
             {% else %}
             <span class="am-timeline__dot"></span>
             {% endif %}
           </div>
-          {% if item.slug %}
-          <a class="am-timeline__link" href="/experience/{{ item.slug }}/">
+          <a class="am-timeline__link" href="{{ item.url }}">
             <div class="am-timeline__content">
-              <time class="am-timeline__period">{{ item.period }}</time>
-              <h3 class="am-timeline__company">{{ item.title }}</h3>
-              <p class="am-timeline__description">{{ item.description }}</p>
+              <time class="am-timeline__period">{{ item.data.period }}</time>
+              <h3 class="am-timeline__company">{{ item.data.title }}</h3>
+              <p class="am-timeline__description">
+                {{ item.data.description }}
+              </p>
               <span class="am-timeline__cta">Details ansehen →</span>
             </div>
           </a>
-          {% else %}
-          <div class="am-timeline__content">
-            <time class="am-timeline__period">{{ item.period }}</time>
-            <h3 class="am-timeline__company">{{ item.title }}</h3>
-            <p class="am-timeline__description">{{ item.description }}</p>
-          </div>
-          {% endif %}
         </div>
         {% endfor %}
       </div>

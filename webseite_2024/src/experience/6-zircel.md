@@ -33,6 +33,6 @@ Bei Zircel arbeitete ich am Aufbau eines Webframeworks für Webseiten mit konver
 
 Die Arbeit stärkte früh mein Verständnis dafür, wie technische Architektur und Nutzererlebnis gemeinsam gedacht werden müssen.
 
-## Verbindung zu spaeteren Rollen
+## Verbindung zu späteren Rollen
 
 Das Produktdenken aus dieser Phase fließt bis heute in meine Arbeit ein, besonders in Rollen mit Schnittstelle zwischen Technik, Produkt und Umsetzung.

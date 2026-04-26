@@ -13,7 +13,7 @@ blogscss: true
     <div class="blog-filter-pills">
       <button class="blog-pill active" data-category="all">Alle</button>
       <button class="blog-pill" data-category="Technik">Technik</button>
-      <button class="blog-pill" data-category="Politik">Politik</button>
+      <button class="blog-pill" data-category="Gesellschaft">Politik</button>
       <button class="blog-pill" data-category="Innovation">Innovation</button>
       <button class="blog-pill" data-category="Nachhaltigkeit">
         Nachhaltigkeit
@@ -32,12 +32,10 @@ blogscss: true
       {% set posts = collections.blog %} {% for post in posts %}
       <article
         class="blog-card"
-        data-category="{{ post.data.kategorie }}"
+        data-category="{{ post.data.kategorie | displayCategory }}"
         data-title="{{ post.data.title }}"
         data-description="{{ post.data.description }}"
       >
-        {% set categoryLabel = post.data.kategorie %} {% if post.data.kategorie
-        == "Politik" %}{% set categoryLabel = "Gesellschaft" %}{% endif %}
         <a href="{{ post.url }}" class="blog-card-link">
           <div
             class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"
@@ -51,7 +49,9 @@ blogscss: true
             %}
           >
             {% if post.data.kategorie %}
-            <span class="blog-tag">{{ categoryLabel }}</span>
+            <span class="blog-tag"
+              >{{ post.data.kategorie | displayCategory }}</span
+            >
             {% endif %}
           </div>
           <div class="blog-card-body">

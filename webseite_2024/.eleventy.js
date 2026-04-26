@@ -5,6 +5,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+  eleventyConfig.addFilter("displayCategory", function (value) {
+    if (value === "Politik") {
+      return "Gesellschaft";
+    }
+    return value;
+  });
+
   eleventyConfig.addFilter("date", function (value, format) {
     const d = new Date(value);
     if (!format || format === "dd.MM.yyyy") {
