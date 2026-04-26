@@ -8,7 +8,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("date", function (value, format) {
     const d = new Date(value);
     if (!format || format === "dd.MM.yyyy") {
-      return d.toLocaleDateString("de-CH", { day: "2-digit", month: "2-digit", year: "numeric" });
+      return d.toLocaleDateString("de-CH", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
     }
     return d.toLocaleDateString("de-CH");
   });
@@ -18,6 +22,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByTag("blog").sort((a, b) => {
       return b.date - a.date; // Neueste zuerst
+    });
+  });
+
+  eleventyConfig.addCollection("experience", function (collectionApi) {
+    return collectionApi.getFilteredByTag("experience").sort((a, b) => {
+      return new Date(b.data.startDate) - new Date(a.data.startDate); // Neueste zuerst
     });
   });
 

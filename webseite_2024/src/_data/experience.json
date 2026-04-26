@@ -6,6 +6,7 @@
     "year": 2026,
     "position": "Smart Energy Specialist | Product Owner & Project Lead",
     "description": "Entwicklung von Energy Management System (EMS) und Installation von Wärmepumpen, Batteriespeichern und Ladestationen. Verantwortung für Product Ownership und Projektleitung von Smart-Grid Lösungen.",
+    "slug": "soleco",
     "showYear": true
   },
   {
@@ -15,6 +16,7 @@
     "year": 2025,
     "position": "Consultant / Projektleiter IIM",
     "description": "Consultant / Projektleiter IIM - Intelligent Information Management",
+    "slug": "cent-systems-ag",
     "showYear": true
   },
   {
@@ -24,6 +26,7 @@
     "year": 2021,
     "position": "Embedded Engineer",
     "description": "Embedded Engineer - Entwicklung von Sensorsoftware (Bluetooth / WiFi / Radar)",
+    "slug": "qumea-ag",
     "showYear": false
   },
   {
@@ -33,6 +36,7 @@
     "year": 2020,
     "position": "Junior Consultant IT Beratung",
     "description": "Junior Consultant IT Beratung",
+    "slug": "awk-group-ag",
     "showYear": false
   },
   {
@@ -42,6 +46,7 @@
     "year": 2020,
     "position": "Elektroingenieur",
     "description": "Elektroingenieur - Masterthesis: Event-triggered Multi-hop Communication for Wireless Sensor Networks",
+    "slug": "master-eth-zuerich",
     "showYear": true
   },
   {
@@ -51,6 +56,7 @@
     "year": 2018,
     "position": "Elektroingenieur",
     "description": "Elektroingenieur",
+    "slug": "bachelor-eth-zuerich",
     "showYear": true
   },
   {
@@ -60,6 +66,7 @@
     "year": 2017,
     "position": "Web Framework Development",
     "description": "Aufbau eines Webframeworks für Webseiten im Stil einer Konversation",
+    "slug": "zircel",
     "showYear": true
   }
 ]

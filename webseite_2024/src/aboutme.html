@@ -125,7 +125,7 @@ aboutmecss: true
   </section>
 
   <!-- Experience Timeline Section -->
-  <section class="am-timeline-section">
+  <section class="am-timeline-section" id="werdegang">
     <div class="am-container">
       <div class="am-section-eyebrow">Werdegang</div>
       <h2 class="am-section-title">Meine Reise</h2>
@@ -140,11 +140,22 @@ aboutmecss: true
             <span class="am-timeline__dot"></span>
             {% endif %}
           </div>
+          {% if item.slug %}
+          <a class="am-timeline__link" href="/experience/{{ item.slug }}/">
+            <div class="am-timeline__content">
+              <time class="am-timeline__period">{{ item.period }}</time>
+              <h3 class="am-timeline__company">{{ item.title }}</h3>
+              <p class="am-timeline__description">{{ item.description }}</p>
+              <span class="am-timeline__cta">Details ansehen →</span>
+            </div>
+          </a>
+          {% else %}
           <div class="am-timeline__content">
             <time class="am-timeline__period">{{ item.period }}</time>
             <h3 class="am-timeline__company">{{ item.title }}</h3>
             <p class="am-timeline__description">{{ item.description }}</p>
           </div>
+          {% endif %}
         </div>
         {% endfor %}
       </div>

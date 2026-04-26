@@ -1,0 +1,64 @@
+---
+layout: layouts/base.html
+experiencecss: true
+---
+
+<div class="xp-page">
+  <section class="xp-hero">
+    <div class="xp-hero-inner">
+      <a class="xp-back-link" href="/aboutme#werdegang"
+        >← Zurück zum Werdegang</a
+      >
+      <p class="xp-eyebrow">Erfahrungsprofil</p>
+      <h1 class="xp-title">{{ title }}</h1>
+      <p class="xp-position">{{ position }}</p>
+      <div class="xp-meta-row">
+        <span class="xp-meta-pill">{{ period }}</span>
+        {% if startDate %}<span class="xp-meta-pill"
+          >Start: {{ startDate | date("dd.MM.yyyy") }}</span
+        >{% endif %}
+      </div>
+      {% if description %}
+      <p class="xp-summary">{{ description }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="xp-content-section">
+    <div class="xp-content-inner">
+      <article class="xp-content">{{ content | safe }}</article>
+
+      <aside class="xp-side">
+        <div class="xp-side-card">
+          <h2 class="xp-side-title">Rolle</h2>
+          <p class="xp-side-text">{{ position }}</p>
+        </div>
+
+        <div class="xp-side-card">
+          <h2 class="xp-side-title">Zeitraum</h2>
+          <p class="xp-side-text">{{ period }}</p>
+        </div>
+
+        {% if xpTechnologies and xpTechnologies.length %}
+        <div class="xp-side-card">
+          <h2 class="xp-side-title">Technologie-Stack</h2>
+          <div class="xp-tags">
+            {% for technology in xpTechnologies %}
+            <span class="xp-tag">{{ technology }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %} {% if xpSkills and xpSkills.length %}
+        <div class="xp-side-card">
+          <h2 class="xp-side-title">Fähigkeiten</h2>
+          <div class="xp-tags">
+            {% for skill in xpSkills %}
+            <span class="xp-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+  </section>
+</div>
