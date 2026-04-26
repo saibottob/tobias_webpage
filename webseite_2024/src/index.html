@@ -18,16 +18,21 @@ homecss: true
     <div class="hero-left">
       <div class="hero-eyebrow fade-up">
         <span class="hero-eyebrow-dot"></span>
-        <span class="hero-eyebrow-text">Smart Energy · FDP · Schweiz</span>
+        <span class="hero-eyebrow-text"
+          >Smart Energy · Technologie · Schweiz</span
+        >
       </div>
       <h1 class="hero-headline fade-up-2">
         <span class="hero-line--white">Energie.</span>
-        <span class="hero-line--amber">Politik.</span>
+        <span class="hero-line--amber">Lösungen.</span>
         <span class="hero-line--muted">Einblicke.</span>
       </h1>
       <div class="hero-desc-row fade-up-3">
         <div class="hero-desc-divider"></div>
-        <p class="hero-desc-text">Smart Energy Specialist bei Soleco. FDP-Mitglied.<br>Pragmatischer Denker aus der Schweiz.</p>
+        <p class="hero-desc-text">
+          Smart Energy Specialist bei Soleco.<br />Pragmatischer Denker aus der
+          Schweiz.
+        </p>
       </div>
       <div class="hero-ctas fade-up-4">
         <a href="/blogs" class="btn-hero-primary">Blog lesen →</a>
@@ -41,7 +46,7 @@ homecss: true
         <img src="/assets/images/Portrait.jpg" alt="Tobias Gatschet" />
         <div class="hero-portrait-overlay">
           <div class="hero-portrait-name">Tobias Gatschet</div>
-          <div class="hero-portrait-sub">Smart Energy · FDP · CH</div>
+          <div class="hero-portrait-sub">Smart Energy · Engineering · CH</div>
         </div>
       </div>
     </div>
@@ -52,16 +57,18 @@ homecss: true
 <div class="stats-strip">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Jahre Embedded Engineering</div>
+      <div class="stat-num">Engineering</div>
+      <div class="stat-label">Praxisnah von Analyse bis Umsetzung</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">EMS</div>
-      <div class="stat-label">Energiemanagement-Expertise</div>
+      <div class="stat-num">Fokus</div>
+      <div class="stat-label">Smart Energy und digitale Lösungen</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">FDP</div>
-      <div class="stat-label">Liberale Politik Schweiz</div>
+      <div class="stat-num">Wirkung</div>
+      <div class="stat-label">
+        Techniklösungen mit klarem Mehrwert im Alltag
+      </div>
     </div>
   </div>
 </div>
@@ -79,13 +86,27 @@ homecss: true
   {% set posts = collections.blog %}
   <div class="blog-grid">
     <!-- Featured post -->
-    {% set featured = posts[0] %}
-    {% if featured %}
+    {% set featured = posts[0] %} {% set featuredCategoryLabel =
+    featured.data.kategorie if featured else "" %} {% if featured and
+    featured.data.kategorie == "Politik" %}{% set featuredCategoryLabel =
+    "Gesellschaft" %}{% endif %} {% if featured %}
     <div class="blog-grid__featured">
       <article class="blog-card blog-card--large">
         <a href="{{ featured.url }}" class="blog-card-link">
-          <div class="blog-card-image blog-card-image--large"{% if featured.data.image %} style="background-image:url('{{ featured.data.image }}');background-size:cover;background-position:center"{% endif %}>
-            {% if featured.data.kategorie %}<span class="blog-tag">{{ featured.data.kategorie }}</span>{% endif %}
+          <div
+            class="blog-card-image blog-card-image--large"
+            {%
+            if
+            featured.data.image
+            %}
+            style="background-image:url('{{ featured.data.image }}');background-size:cover;background-position:center"
+            {%
+            endif
+            %}
+          >
+            {% if featured.data.kategorie %}<span class="blog-tag"
+              >{{ featuredCategoryLabel }}</span
+            >{% endif %}
           </div>
           <div class="blog-card-body">
             <h3 class="blog-card-title">{{ featured.data.title }}</h3>
@@ -101,12 +122,25 @@ homecss: true
 
     <!-- Side posts (next 2) -->
     <div class="blog-grid__side">
-      {% for post in posts | limit(3) %}
-      {% if not loop.first %}
+      {% for post in posts | limit(3) %} {% if not loop.first %} {% set
+      sideCategoryLabel = post.data.kategorie %} {% if post.data.kategorie ==
+      "Politik" %}{% set sideCategoryLabel = "Gesellschaft" %}{% endif %}
       <article class="blog-card">
         <a href="{{ post.url }}" class="blog-card-link">
-          <div class="blog-card-image"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
-            {% if post.data.kategorie %}<span class="blog-tag">{{ post.data.kategorie }}</span>{% endif %}
+          <div
+            class="blog-card-image"
+            {%
+            if
+            post.data.image
+            %}
+            style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"
+            {%
+            endif
+            %}
+          >
+            {% if post.data.kategorie %}<span class="blog-tag"
+              >{{ sideCategoryLabel }}</span
+            >{% endif %}
           </div>
           <div class="blog-card-body">
             <h3 class="blog-card-title">{{ post.data.title }}</h3>
@@ -117,8 +151,7 @@ homecss: true
           </div>
         </a>
       </article>
-      {% endif %}
-      {% endfor %}
+      {% endif %} {% endfor %}
     </div>
   </div>
 </section>
@@ -128,20 +161,29 @@ homecss: true
   <div class="about-strip-inner">
     <div class="about-strip-left">
       <div class="about-strip-eyebrow">Über mich</div>
-      <h2 class="about-strip-title">Technik trifft<br><span>Politik.</span></h2>
-      <p class="about-strip-desc">Ich verbinde Expertise in Smart Energy mit politischem Engagement bei der FDP — mit dem Ziel, die Schweiz effizienter und freier zu gestalten.</p>
+      <h2 class="about-strip-title">
+        Technik trifft<br /><span>Praxis.</span>
+      </h2>
+      <p class="about-strip-desc">
+        Ich verbinde Smart-Energy-Expertise mit klarer, lösungsorientierter
+        Umsetzung im Alltag.
+      </p>
       <a href="/aboutme" class="btn-about-strip">Mehr über mich →</a>
     </div>
     <div class="about-strip-pillars">
       <div class="about-pillar">
         <div class="about-pillar-icon">⚡</div>
         <div class="about-pillar-label">Smart Energy</div>
-        <div class="about-pillar-desc">Specialist bei Soleco — Energiemanagement &amp; Embedded Systems</div>
+        <div class="about-pillar-desc">
+          Specialist bei Soleco — Energiemanagement &amp; Embedded Systems
+        </div>
       </div>
       <div class="about-pillar">
-        <div class="about-pillar-icon">🗳</div>
-        <div class="about-pillar-label">FDP Schweiz</div>
-        <div class="about-pillar-desc">Liberale Politik für eine freie und nachhaltige Schweiz</div>
+        <div class="about-pillar-icon">💡</div>
+        <div class="about-pillar-label">Strategie &amp; Umsetzung</div>
+        <div class="about-pillar-desc">
+          Von der Idee bis zur Umsetzung mit Fokus auf Wirkung und Klarheit
+        </div>
       </div>
     </div>
   </div>

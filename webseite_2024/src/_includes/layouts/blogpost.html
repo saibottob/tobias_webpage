@@ -8,13 +8,16 @@ blogpostcss: true
   {% if image %}
   <img class="post-hero-bg" src="{{ image }}" alt="" />
   {% else %}
-  <div class="post-hero-gradient post-hero-gradient--{{ kategorie | lower }}"></div>
+  <div
+    class="post-hero-gradient post-hero-gradient--{{ kategorie | lower }}"
+  ></div>
   {% endif %}
   <div class="post-hero-overlay"></div>
   <div class="post-hero-inner">
     <a href="/blogs/" class="post-back-btn">← Zurück</a>
-    {% if kategorie %}
-    <span class="post-tag">{{ kategorie }}</span>
+    {% set categoryLabel = kategorie %} {% if kategorie == "Politik" %}{% set
+    categoryLabel = "Gesellschaft" %}{% endif %} {% if kategorie %}
+    <span class="post-tag">{{ categoryLabel }}</span>
     {% endif %}
     <h1 class="post-title">{{ title }}</h1>
     <div class="post-meta">
@@ -28,15 +31,13 @@ blogpostcss: true
 <!-- Post Content -->
 <div class="post-body-wrapper">
   <div class="post-body">
-    <div class="post-content">
-      {{ content | safe }}
-    </div>
+    <div class="post-content">{{ content | safe }}</div>
 
     <div class="post-author">
       <div class="post-author-avatar">TG</div>
       <div>
         <div class="post-author-name">Tobias Gatschet</div>
-        <div class="post-author-role">Smart Energy &amp; FDP Schweiz</div>
+        <div class="post-author-role">Smart Energy &amp; Produktstrategie</div>
       </div>
     </div>
   </div>
@@ -50,24 +51,37 @@ blogpostcss: true
       <h2 class="post-more-title">Das könnte dich auch interessieren</h2>
     </div>
     <div class="post-more-grid">
-      {% for post in collections.blog | limit(4) %}
-        {% if post.url != page.url %}
-          <article class="blog-card">
-            <a href="{{ post.url }}" class="blog-card-link">
-              <div class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"{% if post.data.image %} style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"{% endif %}>
-                {% if post.data.kategorie %}<span class="blog-tag">{{ post.data.kategorie }}</span>{% endif %}
-              </div>
-              <div class="blog-card-body">
-                <h3 class="blog-card-title">{{ post.data.title }}</h3>
-                <p class="blog-card-desc">{{ post.data.description }}</p>
-                <div class="blog-card-meta">
-                  <span>{{ post.date | date("dd.MM.yyyy") }}</span>
-                </div>
-              </div>
-            </a>
-          </article>
-        {% endif %}
-      {% endfor %}
+      {% for post in collections.blog | limit(4) %} {% if post.url != page.url
+      %} {% set moreCategoryLabel = post.data.kategorie %} {% if
+      post.data.kategorie == "Politik" %}{% set moreCategoryLabel =
+      "Gesellschaft" %}{% endif %}
+      <article class="blog-card">
+        <a href="{{ post.url }}" class="blog-card-link">
+          <div
+            class="blog-card-image blog-card-image--{{ post.data.kategorie | lower }}"
+            {%
+            if
+            post.data.image
+            %}
+            style="background-image:url('{{ post.data.image }}');background-size:cover;background-position:center"
+            {%
+            endif
+            %}
+          >
+            {% if post.data.kategorie %}<span class="blog-tag"
+              >{{ moreCategoryLabel }}</span
+            >{% endif %}
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">{{ post.data.title }}</h3>
+            <p class="blog-card-desc">{{ post.data.description }}</p>
+            <div class="blog-card-meta">
+              <span>{{ post.date | date("dd.MM.yyyy") }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endif %} {% endfor %}
     </div>
   </div>
 </section>
