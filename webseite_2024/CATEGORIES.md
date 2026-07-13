@@ -66,7 +66,6 @@ Um eine neue Kategorie hinzuzufügen:
 ## Architektur
 
 - Kategorien werden im Markdown-Frontmatter der Blog-Posts definiert
-- Format: `kategorie: KategorieName` (Groß- und Kleinschreibung beachten)
+- Format: `kategorie: KategorieName` (Gross- und Kleinschreibung beachten)
 - Filter und Anzeige sind im Blog-Listing implementiert (`/blogs`) mit interaktiven Kategorie-Pills
 - Styling für Kategorien ist in `/css/blogs.css` definiert
-
