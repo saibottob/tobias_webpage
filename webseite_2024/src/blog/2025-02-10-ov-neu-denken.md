@@ -20,7 +20,7 @@ Das Modell hat tatsächlich einige Stärken:
 
 - **Einfachheit**: Weniger Verwirrung zwischen Verkehrsverbindungen, weniger Ticketing-Aufwand
 - **Attraktivität**: ÖV als echte Alternative zum Auto – bequeuer, klar und verständlich
-- **Entlastung**: Weniger Stau und Druck auf die Straßeninfrastruktur
+- **Entlastung**: Weniger Stau und Druck auf die Strasseninfrastruktur
 
 Diese Punkte sind nicht zu unterschätzen.
 

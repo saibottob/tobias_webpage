@@ -592,6 +592,8 @@
   align-items: flex-start;
   gap: 18px;
   transition: background 150ms;
+  color: inherit;
+  text-decoration: none;
 }
 
 .about-pillar:hover {

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tobias_webpage",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "webseite_2024", "start"],
+      "port": 8080
+    }
+  ]
+}

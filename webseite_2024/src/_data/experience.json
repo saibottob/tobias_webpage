@@ -13,17 +13,17 @@
     "period": "Juli 2025 - September 2025",
     "startDate": "2025-07-01",
     "year": 2025,
-    "position": "Consultant / Projektleiter IIM",
-    "description": "Consultant / Projektleiter IIM - Intelligent Information Management",
+    "position": "Consultant / Projektleiter | Digital New Business",
+    "description": "Beratung zu digitaler Transformation, Projektleitung und Mitaufbau von Digital New Business",
     "showYear": true
   },
   {
-    "title": "QUMEA AG",
+    "title": "QUMEA AG | Radar & Full-Stack",
     "period": "Juni 2021 - Juli 2025",
     "startDate": "2021-06-01",
     "year": 2021,
-    "position": "Embedded Engineer",
-    "description": "Embedded Engineer - Entwicklung von Sensorsoftware (Bluetooth / WiFi / Radar)",
+    "position": "Development Engineer | Radar, Embedded & Full-Stack",
+    "description": "Entwicklung von Sensorsoftware, Radarsignalverarbeitung, cloudbasiertem Flottenmanagement und Produktionsprozessen",
     "showYear": false
   },
   {
@@ -54,12 +54,12 @@
     "showYear": true
   },
   {
-    "title": "Zircel",
+    "title": "Zircel | Conversation Platform",
     "period": "2017 - 2020",
     "startDate": "2017-01-01",
     "year": 2017,
-    "position": "Web Framework Development",
-    "description": "Aufbau eines Webframeworks für Webseiten im Stil einer Konversation",
+    "position": "Web Framework Development | Conversation Platform",
+    "description": "Entwicklung einer Plattform für konversationsorientierte Webseiten und interaktive Nutzerführung",
     "showYear": true
   }
 ]

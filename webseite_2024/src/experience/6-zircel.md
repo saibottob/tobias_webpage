@@ -4,35 +4,41 @@ title: Zircel
 period: 2017 - 2020
 startDate: 2017-01-01
 year: 2017
-position: Web Framework Development
-description: "Aufbau eines Webframeworks für Webseiten im Stil einer Konversation"
+position: Web Framework Development | Conversation Platform
+description: Entwicklung einer Plattform für konversationsorientierte Webseiten, die komplexe Inhalte zugänglicher macht.
 permalink: /experience/zircel/
 tags: experience
 xpTechnologies:
   - Web Framework Architektur
   - Frontend Entwicklung
+  - Tree Editor
+  - Template Editor
+  - Custom Element Integration
+  - Analytics und Replay
   - Interaktionsdesign
-  - Prototyping
 xpSkills:
   - Produktnahe Entwicklung
   - UX-orientiertes Denken
   - Iterative Verbesserung
+  - No-Code / Low-Code Denken
 ---
 
 ## Rolle und Kontext
 
-Bei Zircel arbeitete ich am Aufbau eines Webframeworks für Webseiten mit konversationsorientiertem Stil. Die Idee war, digitale Inhalte zugänglicher und interaktiver zu vermitteln.
+Bei Zircel arbeitete ich am Aufbau einer Plattform für Konversationsanwendungen. Das Ziel war, statische Websites in dialogorientierte Erlebnisse zu verwandeln und Nutzer gezielt durch komplexe Inhalte zu führen.
 
 ## Aufgaben
 
-- Konzeption und Umsetzung zentraler Framework-Bausteine
-- Entwicklung von Komponenten für dialognahe Nutzerführung
-- Iteratives Testen und Verbessern der Bedienbarkeit
+- Konzeption und Umsetzung zentraler Framework-Bausteine für dialogorientierte Anwendungen
+- Entwicklung eines visuellen Tree Editors für die Struktur und Logik von Konversationen
+- Aufbau eines Template Editors auf Basis von HTML und CSS für Design und Layout
+- Einbindung der Lösung in bestehende Websites über ein JavaScript-Plugin und das Custom Element `<zircel-page>`
+- Entwicklung von Funktionen für Analytics, Replay und Feedback zur Optimierung der Nutzerführung
 
 ## Wirkung
 
-Die Arbeit stärkte früh mein Verständnis dafür, wie technische Architektur und Nutzererlebnis gemeinsam gedacht werden müssen.
+Die Arbeit stärkte früh mein Verständnis dafür, wie technische Architektur, Nutzererlebnis und Informationsdesign zusammenwirken, wenn Inhalte nicht nur gezeigt, sondern geführt werden sollen.
 
 ## Verbindung zu späteren Rollen
 
-Das Produktdenken aus dieser Phase fließt bis heute in meine Arbeit ein, besonders in Rollen mit Schnittstelle zwischen Technik, Produkt und Umsetzung.
+Das Produktdenken aus dieser Phase fliesst bis heute in meine Arbeit ein, besonders in Rollen mit Schnittstelle zwischen Technik, Produkt und Umsetzung.
