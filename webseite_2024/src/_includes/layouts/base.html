@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ description }}" />
     <title>{{ title }}</title>
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tobias Gatschet" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta
+      property="og:image"
+      content="https://tobias-gatschet.ch{{ image or '/assets/images/hero-image.png' }}"
+    />
+    <meta property="og:url" content="https://tobias-gatschet.ch{{ page.url }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta
+      name="twitter:image"
+      content="https://tobias-gatschet.ch{{ image or '/assets/images/hero-image.png' }}"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +46,8 @@
     <link rel="stylesheet" href="/css/blogpost.css" />
     {% endif %} {% if experiencecss %}
     <link rel="stylesheet" href="/css/experience.css" />
+    {% endif %} {% if errorcss %}
+    <link rel="stylesheet" href="/css/error.css" />
     {% endif %}
   </head>
   <body>

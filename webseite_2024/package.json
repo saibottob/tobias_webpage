@@ -1,14 +1,15 @@
 {
   "name": "tobias_webpage",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website of Tobias Gatschet - portfolio, blog and professional/political profile",
   "main": "index.js",
+  "homepage": "https://tobias-gatschet.ch",
   "scripts": {
     "start": "npx eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tobias Gatschet",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

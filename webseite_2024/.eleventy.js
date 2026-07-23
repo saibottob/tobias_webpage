@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/");
   eleventyConfig.addPassthroughCopy("src/css/");
   eleventyConfig.addPassthroughCopy("src/js/");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
