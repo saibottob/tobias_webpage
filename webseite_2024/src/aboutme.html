@@ -19,11 +19,11 @@ aboutmecss: true
       <div class="am-hero__content">
         <div class="am-hero__eyebrow">Über mich</div>
         <h1 class="am-hero__name">Tobias Gatschet</h1>
-        <p class="am-hero__role">Smart Energy Specialist &amp; Product Owner</p>
+        <p class="am-hero__role">Smart Energy Specialist &amp; Software-Entwickler</p>
         <p class="am-hero__bio">
-          Begeisterter Ingenieur mit Fokus auf innovative Technologien und
-          intelligente Informationssysteme. Ich verbinde technisches Know-how
-          mit pragmatischer Umsetzung.
+          Begeisterter Entwickler mit Fokus auf smarte Energietechnik und
+          KI-gestützte Systeme. Ich verbinde technisches Tiefenwissen mit
+          pragmatischer Umsetzung.
         </p>
       </div>
     </div>
@@ -93,6 +93,12 @@ aboutmecss: true
       <div class="am-two-col">
         <div>
           <div class="am-statement">
+            <p class="am-statement__text">
+              Technik begeistert mich dort am meisten, wo komplexe Systeme
+              durchdrungen und zu Ende gedacht werden müssen. Die besten
+              Lösungen entstehen für mich im Team – im direkten Austausch mit
+              Menschen, die unterschiedliche Perspektiven einbringen.
+            </p>
             <p class="am-statement__text">
               Ich arbeite mit Fokus auf pragmatische Lösungen, klare Prioritäten
               und langfristige Wirkung. Mit dem Motto
@@ -179,6 +185,34 @@ aboutmecss: true
         {% for skill in skills %}
         <span class="am-skill">{{ skill.name }}</span>
         {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section class="am-hobbies-section">
+    <div class="am-container">
+      <div class="am-section-eyebrow">Ausgleich</div>
+      <h2 class="am-section-title">Was mich sonst bewegt</h2>
+      <div class="am-two-col">
+        <div>
+          <h3 class="am-hobby-group__title">Sport &amp; Bewegung</h3>
+          <div class="am-hobbies">
+            <span class="am-hobby">Golf</span>
+            <span class="am-hobby">Handball</span>
+            <span class="am-hobby">Gym</span>
+            <span class="am-hobby">Velofahren</span>
+            <span class="am-hobby">Wandern</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="am-hobby-group__title">Wissen &amp; Neugier</h3>
+          <div class="am-hobbies">
+            <span class="am-hobby">Bücher lesen</span>
+            <span class="am-hobby">Neues lernen</span>
+            <span class="am-hobby">Technik verstehen</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
