@@ -7,7 +7,6 @@ permalink: "/blog/entaeuschung-klarheit/"
 image: /assets/images/blogposts/entaeuschung-anfang.png
 tags: blog
 kategorie: Perspektiven
-blogpostcss: true
 ---
 
 ## Enttäuschung ist das Ende der Illusion und der Anfang von Klarheit

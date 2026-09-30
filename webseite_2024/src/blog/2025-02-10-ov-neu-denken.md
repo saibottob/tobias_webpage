@@ -7,7 +7,6 @@ permalink: "/blog/ov-neu-denken/"
 image: /assets/images/blogposts/ov-mobilitat.png
 tags: blog
 kategorie: Nachhaltigkeit
-blogpostcss: true
 ---
 
 ## Gratis-ÖV: Ein spannendes Modell mit Schattenseiten

@@ -7,7 +7,6 @@ permalink: "/blog/dinosaurier-denken/"
 image: /assets/images/blogposts/dinosaurier-prozess.png
 tags: blog
 kategorie: Innovation
-blogpostcss: true
 ---
 
 ## Schluss mit Dinosaurier-Denken!

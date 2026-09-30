@@ -7,7 +7,6 @@ permalink: "/blog/ahv-rente-mehrwertsteuer/"
 image: /assets/images/blogposts/ahv-rente-mwst.png
 tags: blog
 kategorie: Politik
-blogpostcss: true
 ---
 
 ## Das Problem mit der 13. AHV-Rente

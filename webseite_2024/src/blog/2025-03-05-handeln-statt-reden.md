@@ -7,7 +7,6 @@ permalink: "/blog/handeln-statt-reden/"
 image: /assets/images/blogposts/handeln-statt-reden.png
 tags: blog
 kategorie: Politik
-blogpostcss: true
 ---
 
 > Fortschritt entsteht durch Handeln – nicht durch endlose Diskussionen.

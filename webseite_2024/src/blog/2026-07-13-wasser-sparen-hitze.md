@@ -7,7 +7,6 @@ permalink: "/blog/wasser-sparen-hitze/"
 image: /assets/images/blogposts/wassermangel.png
 tags: blog
 kategorie: Nachhaltigkeit
-blogpostcss: true
 ---
 
 Seit Wochen herrschen in weiten Teilen der Schweiz Temperaturen über 35 Grad, und die aktuelle Trockenheit gehört zu den markantesten seit Messbeginn. In den letzten drei Monaten fiel auf der Alpennordseite und im Wallis nur rund halb so viel Niederschlag wie im langjährigen Mittel, Böden, Grundwasser und Gewässer trocknen zunehmend aus.

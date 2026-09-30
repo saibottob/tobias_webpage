@@ -7,7 +7,6 @@ permalink: "/blog/1-august-schweiz/"
 image: /assets/images/blogposts/1august.png
 tags: blog
 kategorie: Politik
-blogpostcss: true
 ---
 
 ## Die Herausforderungen erkennen und annehmen

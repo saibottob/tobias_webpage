@@ -182,3 +182,11 @@ Edit `src/_includes/basenavigation.html` - add `<li>` to the `<ul>` in `.nav-lin
 - **Experience data**: Currently JSON-based in `_data/experience.json`. If bulk editing needed, validate JSON syntax carefully.
 - **Image references**: Portrait uses `/assets/images/Portrait.jpg` - should be user-swappable
 - **Mobile menu**: Uses fixed positioning overlay on small screens - test carefully when modifying
+
+## Redesign (Sept 2026)
+
+Dark, technical redesign on the same FDP palette (tokens in `src/css/variables.css`, all styles in `src/css/site.css`; old per-page CSS and `blog-filter.js` removed).
+- **Animation libs are self-hosted**: `.eleventy.js` copies three.js, Anime.js (v4) and Motion (vanilla; Framer Motion is React-only) from `node_modules` to `dist/vendor/`. `base.html` has an importmap for `three` and `animejs`.
+- `src/js/site.js` (module): nav, scroll progress, Motion scroll reveals (`data-reveal`), Anime.js hero text, timeline line, blog filter+search. `src/js/hero.js`: Three.js energy-flow network, only loaded on the homepage (`#hero-canvas`), skipped with `prefers-reduced-motion`.
+- Blog cards are one partial: `_includes/blogcard.html` (expects `post`, optional `featured`).
+- No per-page CSS flags anymore; new pages only need `layout: layouts/base.html`.

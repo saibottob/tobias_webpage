@@ -7,7 +7,6 @@ permalink: "/blog/batteriespeicher-dimensionierung/"
 image: /assets/images/blogposts/batterie.png
 tags: blog
 kategorie: technik
-blogpostcss: true
 ---
 
 Eine Solaranlage auf dem Dach, ein moderner Batteriespeicher im Keller – das klingt nach dem Traum von Unabhängigkeit und Kostenersparnis. Aber hier kommt die unbequeme Wahrheit: Ein falsch dimensionierter Speicher kann diesen Traum schnell zur teuren Enttäuschung machen.
