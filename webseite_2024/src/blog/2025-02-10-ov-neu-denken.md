@@ -4,7 +4,7 @@ title: "ÖV neu denken – mehr als nur gratis?"
 date: 2025-02-10
 description: "Gratis-ÖV für junge Menschen ist ein Anfang, aber sind wir bereit die Mobilität grundlegend neu zu denken?"
 permalink: "/blog/ov-neu-denken/"
-image: /assets/images/blogposts/ov-mobilitat.png
+image: /assets/images/blogposts/ov-mobilitat.jpg
 tags: blog
 kategorie: Nachhaltigkeit
 ---

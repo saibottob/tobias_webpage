@@ -4,7 +4,7 @@ title: "Wer handeln will, findet Wege. Wer nicht handeln will, findet Gründe."
 date: 2025-03-05
 description: "Warum Diskussionen wichtig sind – aber irgendwann muss gehandelt werden. Die Rolle von Lobbying bei der Blockade von Innovation."
 permalink: "/blog/handeln-statt-reden/"
-image: /assets/images/blogposts/handeln-statt-reden.png
+image: /assets/images/blogposts/handeln-statt-reden.jpg
 tags: blog
 kategorie: Politik
 ---

@@ -4,7 +4,7 @@ title: "Schluss mit Dinosaurier-Denken!"
 date: 2025-02-20
 description: "Warum Prozessoptimierung der Erfolgsfaktor für Unternehmen der Zukunft ist – und nicht eine Last."
 permalink: "/blog/dinosaurier-denken/"
-image: /assets/images/blogposts/dinosaurier-prozess.png
+image: /assets/images/blogposts/dinosaurier-prozess.jpg
 tags: blog
 kategorie: Innovation
 ---

@@ -4,7 +4,7 @@ title: "Wasser sparen im Alltag: Kleine Massnahmen, grosse Wirkung"
 date: 2026-07-13
 description: "Rekord-Trockenheit 2026: Warum Wasser für Nahrung, Tiere und Wald knapp wird, und wie du mit Sparduschbrause, Regentonne und Regenwassernutzung selbst Wasser und Geld sparst."
 permalink: "/blog/wasser-sparen-hitze/"
-image: /assets/images/blogposts/wassermangel.png
+image: /assets/images/blogposts/wassermangel.jpg
 tags: blog
 kategorie: Nachhaltigkeit
 ---
