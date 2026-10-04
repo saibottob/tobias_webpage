@@ -207,10 +207,11 @@ export function initHero(canvas) {
 
   /* ---------- Sun ---------- */
   const sunGroup = new THREE.Group();
-  sunGroup.position.set(-5.2, 3.5, 0.3);
+  sunGroup.position.set(1.2, 4.3, -2.2); // behind the cloud, so rain clouds cover it
   root.add(sunGroup);
-  const sunMat = new THREE.MeshBasicMaterial({ color: COLORS.solar });
-  sunGroup.add(new THREE.Mesh(new THREE.SphereGeometry(0.6, 24, 24), sunMat));
+  const sunBody = solid(new THREE.IcosahedronGeometry(0.62, 1), 0xf4c300, 0xf4c300, 0xffe27a, 0xc99700);
+  const sunMat = sunBody.children[0].material;
+  sunGroup.add(sunBody);
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: COLORS.solar, transparent: true, depthWrite: false }));
   halo.scale.setScalar(4.2);
   sunGroup.add(halo);
@@ -219,8 +220,8 @@ export function initHero(canvas) {
     const a = (i / 14) * Math.PI * 2;
     rayPts.push(V(Math.cos(a) * 0.85, Math.sin(a) * 0.85, 0), V(Math.cos(a) * 1.25, Math.sin(a) * 1.25, 0));
   }
-  const rays = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(rayPts), new THREE.LineBasicMaterial({ color: COLORS.solar }));
-  sunGroup.add(rays);
+  const rays = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(rayPts), new THREE.LineBasicMaterial({ color: COLORS.solar, transparent: true }));
+  
 
   /* ---------- EMS hub ---------- */
   const hubPos = V(0, -1.0, 0.2);
@@ -269,7 +270,7 @@ export function initHero(canvas) {
     c.position.set(x, y, 0);
     cloud.add(c);
   });
-  cloud.position.set(2.2, 4.1, 0.2);
+  cloud.position.set(2.4, 4.1, 0.0);
   root.add(cloud);
 
   const tankPos = V(2.8, -1.3, 0.3);
@@ -284,9 +285,9 @@ export function initHero(canvas) {
     root.add(plant);
   });
   // rain drops
-  const M = isMobile ? 30 : 60;
+  const M = isMobile ? 12 : 24;
   const rainPos = new Float32Array(M * 3).fill(-999);
-  const drops = Array.from({ length: M }, () => ({ x: 0.6 + Math.random() * 3.2, z: -1.0 + Math.random() * 2.6, y: Math.random() * 5.5 - 1.8, v: 4 + Math.random() * 2 }));
+  const drops = Array.from({ length: M }, () => ({ x: 0.6 + Math.random() * 3.2, z: -1.0 + Math.random() * 2.6, y: Math.random() * 5.5 - 1.8, v: 2.4 + Math.random() * 1.4 }));
   const rainGeo = new THREE.BufferGeometry();
   rainGeo.setAttribute("position", new THREE.BufferAttribute(rainPos, 3));
   const rain = new THREE.Points(rainGeo, new THREE.PointsMaterial({ color: COLORS.water, size: 0.12, map: glowTex, transparent: true, depthWrite: false }));
@@ -295,11 +296,11 @@ export function initHero(canvas) {
 
   /* ---------- Flow paths ---------- */
   const anchors = {
-    sun: V(-4.7, 3.1, 0.4),
+    sun: V(1.0, 3.7, -2.0),
     roof: V(0, 0.7, 0.75),
     battery: V(-3.9, -0.3, 1.4),
     pump: V(-2.6, -0.7, 0.0),
-    car: V(4.5, -0.85, 2.2),
+    car: V(3.0, -0.8, 2.3), // wallbox
     pylon: V(5.2, 1.65, -3.4),
     townhall: V(-5.1, 0.6, -3.4),
     ridge: V(0, 1.3, 0),
@@ -308,7 +309,7 @@ export function initHero(canvas) {
     bed: V(3.6, -1.5, -1.5),
   };
   const curve = (a, b, lift) => new THREE.QuadraticBezierCurve3(a, a.clone().lerp(b, 0.5).add(V(0, lift, 0)), b);
-  const N = isMobile ? 12 : 22;
+  const N = isMobile ? 4 : 6; // few, slow "packets" keep the scene calm
   const flowDefs = [
     { id: "sun", c: curve(anchors.sun, anchors.roof, 0.2), color: COLORS.solar },
     { id: "pv", c: curve(anchors.roof, hubPos, 0.6), color: COLORS.solar },
@@ -345,7 +346,7 @@ export function initHero(canvas) {
   pGeo.setAttribute("color", new THREE.BufferAttribute(pCol, 3));
   const particles = new THREE.Points(
     pGeo,
-    new THREE.PointsMaterial({ size: 0.42, map: glowTex, vertexColors: true, transparent: true, depthWrite: false, sizeAttenuation: true })
+    new THREE.PointsMaterial({ size: 0.36, map: glowTex, vertexColors: true, transparent: true, depthWrite: false, sizeAttenuation: true })
   );
   particles.frustumCulled = false;
   root.add(particles);
@@ -353,7 +354,7 @@ export function initHero(canvas) {
 
   /* ---------- Labels ---------- */
   const labelRoot = document.getElementById("hero-labels");
-  const labelDefs = [
+  const labelDefs = [ { id: "sun", name: "Sonne", dot: "#f4c300", at: V(1.2, 5.3, -2.2), m: 1 },
     { id: "town", name: "Gemeinde", dot: "#b28dff", at: V(-5.1, 1.85, -3.4), m: 1 },
     { id: "water", name: "Regenwasser", dot: "#35c6f5", at: V(2.8, -0.35, 0.3), m: 0 },
     { id: "pv", name: "PV-Anlage", dot: "#f4c300", at: V(0, 1.9, 0.9), m: 1 },
@@ -368,19 +369,18 @@ export function initHero(canvas) {
     el.className = "h-label";
     el.dataset.m = l.m;
     el.style.setProperty("--dot", l.dot);
-    el.innerHTML = `<i></i><b>${l.name}</b><output>${l.static || ""}</output>`;
+    el.innerHTML = `<i></i><b>${l.name}</b>`;
     labelRoot?.appendChild(el);
     l.el = el;
-    l.out = el.querySelector("output");
   });
   const labelById = Object.fromEntries(labelDefs.map((l) => [l.id, l]));
   const hud = Object.fromEntries(["time", "pv", "load", "soc", "grid", "water", "town"].map((k) => [k, document.getElementById(`hud-${k}`)]));
 
   /* ---------- Simulation ---------- */
-  const sim = { carX: 10, parked: false, h: 12.8, soc: 45, tank: 40, rain: 0, irr: 0, pv: 0, load: 0, hp: 0, car: 0, charge: 0, dis: 0, exp: 0, imp: 0, direct: 0, base: 0 };
+  const sim = { sunF: 0.8, carX: 10, parked: false, h: 12.8, soc: 45, tank: 40, rain: 0, irr: 0, pv: 0, load: 0, hp: 0, car: 0, charge: 0, dis: 0, exp: 0, imp: 0, direct: 0, base: 0 };
   const smooth = { ...sim };
   function stepSim(dt, t) {
-    const dh = dt * 0.4; // 1 simulated hour = 2.5 s
+    const dh = dt * 0.25; // 1 simulated hour = 4 s, a full day = 96 s
     sim.h = (sim.h + dh) % 24;
     const sunF = Math.max(0, Math.sin((Math.PI * (sim.h - 6)) / 13));
     const cloud = 0.88 + 0.12 * Math.sin(t * 0.9);
@@ -413,6 +413,8 @@ export function initHero(canvas) {
     smooth.h = sim.h;
   }
 
+  const topics = ["Rahmenbedingungen", "Bewilligungen", "Raumplanung", "Energiepolitik", "Mitsprache", "Versammlung"];
+  const phase = (h) => (h < 5 ? "Nacht" : h < 10 ? "Morgen" : h < 14 ? "Mittag" : h < 18 ? "Nachmittag" : h < 22 ? "Abend" : "Nacht");
   const levelOf = (kw, max = 4) => (kw < 0.05 ? 0 : Math.min(1, 0.25 + kw / max));
 
   /* ---------- Layout ---------- */
@@ -426,14 +428,14 @@ export function initHero(canvas) {
     const dist = camera.position.z;
     const vh = 2 * dist * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const vw = vh * camera.aspect;
-    const sceneW = 15;
+    const sceneW = 13.5;
     if (w > 900) {
-      const avail = vw * 0.56;
-      const s = Math.min(1.15, avail / sceneW);
+      const avail = vw * 0.58;
+      const s = Math.min(1.5, avail / sceneW);
       root.scale.setScalar(s);
-      root.position.set(vw * 0.21, 0.7, 0);
+      root.position.set(vw * 0.18, 0.5, 0);
     } else {
-      const s = (vw * 0.98) / sceneW;
+      const s = (vw * 0.92) / sceneW;
       root.scale.setScalar(s);
       root.position.set(-0.5 * s, -0.2, 0);
     }
@@ -460,11 +462,20 @@ export function initHero(canvas) {
   const clock = new THREE.Clock();
   const tmp = new THREE.Vector3();
   let hudTimer = 0;
+  let paused = false;
+  const pauseBtn = document.getElementById("hud-pause");
+  pauseBtn?.addEventListener("click", () => {
+    paused = !paused;
+    pauseBtn.setAttribute("aria-pressed", String(paused));
+    pauseBtn.textContent = paused ? "▶" : "❚❚";
+    pauseBtn.setAttribute("aria-label", paused ? "Animation fortsetzen" : "Animation pausieren");
+  });
 
   function frame() {
     requestAnimationFrame(frame);
     if (!visible || document.hidden) return;
     const dt = Math.min(clock.getDelta(), 0.05);
+    if (paused) return;
     const t = clock.elapsedTime;
     stepSim(dt, t);
     const s = smooth;
@@ -491,12 +502,12 @@ export function initHero(canvas) {
     };
     flowDefs.forEach((f) => {
       f.level += (L[f.id] - f.level) * Math.min(1, dt * 4);
-      const count = f.level < 0.02 ? 0 : Math.max(3, Math.round(f.level * N));
-      f.line.material.opacity = 0.06 + f.level * 0.3;
+      const count = f.level < 0.02 ? 0 : Math.max(2, Math.round(f.level * N));
+      f.line.material.opacity = (f.id.startsWith("pol") ? 0.07 : 0.2) + f.level * 0.28;
       for (let i = 0; i < N; i++) {
         const idx = (f.offset + i) * 3;
         if (i < count) {
-          f.t[i] = (f.t[i] + dt * (0.22 + f.level * 0.4)) % 1;
+          f.t[i] = (f.t[i] + dt * (0.09 + f.level * 0.12)) % 1;
           f.c.getPoint(f.t[i], tmp);
           pPos[idx] = tmp.x;
           pPos[idx + 1] = tmp.y;
@@ -510,10 +521,10 @@ export function initHero(canvas) {
 
     // sun, hub, objects
     const light = document.documentElement.dataset.theme === "light";
-    sunMat.color.setHex(light ? 0xc9d3ef : 0x3c4c80).lerp(col.setHex(COLORS.solar), Math.min(1, s.sunF * 1.6));
-    halo.material.opacity = 0.08 + 0.7 * s.sunF;
-    halo.scale.setScalar(2.8 + 2 * s.sunF);
-    rays.material.opacity = 1;
+    sunMat.color.setHex(light ? 0x9fb0dd : 0xaab8e8).lerp(col.setHex(COLORS.solar), Math.min(1, s.sunF * 1.6));
+    halo.material.opacity = 0.1 + 0.35 * s.sunF;
+    halo.scale.setScalar(2 + 1.2 * s.sunF);
+    rays.material.opacity = 0.15 + 0.85 * s.sunF;
     rays.material.color.copy(sunMat.color);
     rays.rotation.z = t * 0.15;
     sunGroup.scale.setScalar(0.85 + 0.2 * s.sunF);
@@ -529,7 +540,7 @@ export function initHero(canvas) {
 
     // cloud + rain + tank + flag
     cloud.scale.setScalar(Math.max(0.001, Math.min(1, s.rain * 1.6)));
-    cloud.position.x = 2.2 + Math.sin(t * 0.3) * 0.3;
+    cloud.position.x = 2.4 + Math.sin(t * 0.3) * 0.15;
     const nDrops = Math.round(s.rain * M);
     drops.forEach((d, i) => {
       if (i < nDrops) {
@@ -582,25 +593,17 @@ export function initHero(canvas) {
       const mm = Math.floor((s.h % 1) * 60);
       const net = s.exp > s.imp ? -s.exp : s.imp;
       if (hud.time) {
-        hud.time.textContent = `${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}`;
+        hud.time.textContent = `${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")} · ${phase(s.h)}`;
         hud.pv.textContent = fmt(s.pv);
         hud.load.textContent = fmt(s.load);
         hud.soc.textContent = `${Math.round(s.soc)} %${s.charge > 0.1 ? " ↑" : s.dis > 0.1 ? " ↓" : ""}`;
-        hud.grid.textContent = `${net < -0.05 ? "↑ " + fmt(net) : net > 0.05 ? "↓ " + fmt(net) : "–"}`;
+        hud.grid.textContent = `${net < -0.05 ? "↑ " + fmt(net) : net > 0.05 ? "↓ " + fmt(net) : "ausgeglichen"}`;
       }
-      labelById.pv.out.textContent = fmt(s.pv);
-      labelById.bat.out.textContent = `${Math.round(s.soc)} %`;
-      labelById.pump.out.textContent = fmt(s.hp);
-      labelById.car.out.textContent = s.car > 0.1 ? `lädt ${fmt(s.car)}` : sim.parked ? "eingesteckt" : carG.visible ? "unterwegs" : "weg";
-      const topics = ["Rahmenbedingungen", "Bewilligungen", "Raumplanung", "Energiepolitik", "Mitsprache", "Versammlung"];
-      const topic = topics[Math.floor(t / 4) % topics.length];
-      labelById.town.out.textContent = topic;
-      labelById.water.out.textContent = `${Math.round(s.tank)} %${s.rain > 0.1 ? " ↑" : s.irr > 0.3 ? " ↓" : ""}`;
+      const topic = topics[Math.floor(t / 6) % topics.length];
       if (hud.water) {
         hud.water.textContent = `${Math.round(s.tank)} %${s.rain > 0.1 ? " ↑ Regen" : s.irr > 0.3 ? " ↓ Garten" : ""}`;
         hud.town.textContent = topic;
       }
-      labelById.grid.out.textContent = net < -0.05 ? `↑ ${fmt(net)}` : net > 0.05 ? `↓ ${fmt(net)}` : "–";
     }
 
     renderer.render(scene, camera);

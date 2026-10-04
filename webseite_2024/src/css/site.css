@@ -467,7 +467,7 @@ body::before {
 }
 .h-label b {
   font-weight: 400;
-  color: var(--text-mid);
+  color: var(--text);
 }
 .h-label output {
   color: var(--text);
@@ -478,7 +478,7 @@ body::before {
   z-index: 2;
   right: var(--gutter);
   bottom: 2rem;
-  width: 15.5rem;
+  width: 17.5rem;
   padding: 1rem 1.1rem;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
@@ -492,6 +492,7 @@ body::before {
 }
 .hud-head {
   display: flex;
+  gap: 0.4rem;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.7rem;
@@ -503,6 +504,8 @@ body::before {
 }
 .hud-head output {
   color: var(--accent);
+  margin-left: auto;
+  white-space: nowrap;
 }
 .hud-row {
   display: flex;
@@ -522,6 +525,36 @@ body::before {
 }
 .hud-row output {
   color: var(--text);
+}
+.hud-pause {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 0.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-size: 0.55rem;
+  line-height: 1;
+  color: var(--text-mid);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.hud-pause:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+.cta-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(30rem 16rem at 100% 0%, var(--glow-1), transparent 70%),
+    var(--surface);
 }
 .hud-note {
   margin-top: 0.6rem;
@@ -1238,6 +1271,7 @@ body::before {
   border-color: var(--accent);
 }
 .social-media-links img {
+  filter: brightness(0) invert(1);
   width: 20px;
   height: 20px;
 }
@@ -1403,4 +1437,9 @@ footer {
     opacity: 1;
     transform: none;
   }
+}
+
+:root[data-theme="light"] .social-media-links img {
+  filter: brightness(0);
+  opacity: 0.75;
 }

@@ -23,18 +23,22 @@ description: Wege finden statt Gründe suchen – für Energie, Technik und Gese
       <a href="/aboutme" class="btn">Über mich</a>
     </div>
   </div>
-  <aside class="hero-hud" id="hero-hud" aria-hidden="true">
-    <div class="hud-head"><span>Energiefluss</span><output id="hud-time">12:00</output></div>
-    <div class="hud-row" style="--dot:#f4c300"><i></i><span>Solar</span><output id="hud-pv">–</output></div>
-    <div class="hud-row" style="--dot:#ff7a59"><i></i><span>Verbrauch</span><output id="hud-load">–</output></div>
-    <div class="hud-row" style="--dot:#7ae582"><i></i><span>Speicher</span><output id="hud-soc">–</output></div>
-    <div class="hud-row" style="--dot:#5b7cff"><i></i><span>Netz</span><output id="hud-grid">–</output></div>
-    <div class="hud-row" style="--dot:#35c6f5"><i></i><span>Regenwasser</span><output id="hud-water">–</output></div>
-    <div class="hud-row" style="--dot:#b28dff"><i></i><span>Gemeinde</span><output id="hud-town">–</output></div>
-    <div class="hud-note">Simulation eines Tages · ein EMS verteilt die Energie, die Gemeinde setzt den Rahmen</div>
+  <aside class="hero-hud" id="hero-hud" aria-label="Simulierter Energiefluss">
+    <div class="hud-head">
+      <span>Simulation</span>
+      <output id="hud-time">12:00</output>
+      <button type="button" id="hud-pause" class="hud-pause" aria-label="Animation pausieren" aria-pressed="false">❚❚</button>
+    </div>
+    <div aria-hidden="true">
+      <div class="hud-row" style="--dot:#f4c300"><i></i><span>Solar</span><output id="hud-pv">–</output></div>
+      <div class="hud-row" style="--dot:#ff7a59"><i></i><span>Verbrauch</span><output id="hud-load">–</output></div>
+      <div class="hud-row" style="--dot:#7ae582"><i></i><span>Speicher</span><output id="hud-soc">–</output></div>
+      <div class="hud-row" style="--dot:#5b7cff"><i></i><span>Netz</span><output id="hud-grid">–</output></div>
+      <div class="hud-row" style="--dot:#35c6f5"><i></i><span>Regenwasser</span><output id="hud-water">–</output></div>
+      <div class="hud-row" style="--dot:#b28dff"><i></i><span>Gemeinde</span><output id="hud-town">–</output></div>
+    </div>
   </aside>
 </section>
-
 
 
 <section class="section">
@@ -42,26 +46,26 @@ description: Wege finden statt Gründe suchen – für Energie, Technik und Gese
     <span class="eyebrow" data-reveal>Worum es geht</span>
     <h2 class="h-section" data-reveal>Technik trifft <span class="accent">Praxis.</span></h2>
     <p class="lead" data-reveal style="margin-top: 1rem">
-      Ich verbinde Smart-Energy-Expertise mit klarer, lösungsorientierter
-      Umsetzung im Alltag – beruflich wie gesellschaftlich.
+      Ich verbinde Smart-Energy-Know-how mit pragmatischer Umsetzung – im
+      Beruf wie in der Gesellschaft.
     </p>
     <div class="pillars">
       <a class="pillar" href="/aboutme" data-reveal>
         <span class="pillar-num">01</span>
         <h3>Smart Energy</h3>
-        <p>Specialist bei Soleco – Energiemanagement &amp; Embedded Systems.</p>
+        <p>Smart Energy Specialist bei Soleco: Energiemanagement, Wärmepumpen und Embedded Systems.</p>
         <span class="link-arrow">Mehr erfahren <span class="arrow">→</span></span>
       </a>
       <a class="pillar" href="/aboutme#werdegang" data-reveal>
         <span class="pillar-num">02</span>
         <h3>Strategie &amp; Umsetzung</h3>
-        <p>Von der Idee bis zur Umsetzung – mit Fokus auf Wirkung und Klarheit.</p>
+        <p>Von der ersten Idee bis zum laufenden Produkt – mit Fokus auf Wirkung und Klarheit.</p>
         <span class="link-arrow">Werdegang <span class="arrow">→</span></span>
       </a>
       <a class="pillar" href="/politics" data-reveal>
         <span class="pillar-num">03</span>
         <h3>Politik &amp; Gesellschaft</h3>
-        <p>FDP-Mitglied – für pragmatische Lösungen, die im Alltag etwas bewirken.</p>
+        <p>FDP-Mitglied. Für Lösungen, die im Alltag wirklich etwas bewirken.</p>
         <span class="link-arrow">Perspektiven <span class="arrow">→</span></span>
       </a>
     </div>
@@ -81,6 +85,19 @@ description: Wege finden statt Gründe suchen – für Energie, Technik und Gese
       {% for post in collections.blog | limit(3) %}
         {% include "blogcard.html" %}
       {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" style="padding-top: 0">
+  <div class="container">
+    <div class="cta-card" data-reveal>
+      <div>
+        <span class="eyebrow">Austausch</span>
+        <h2 class="h-section">Eine Idee oder <span class="accent">Frage?</span></h2>
+        <p class="lead" style="margin-top: 0.8rem">Ob Smart Energy, Technik oder Gemeinde – ich freue mich auf den Austausch.</p>
+      </div>
+      <a href="/contact" class="btn btn--primary">Kontakt aufnehmen <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
