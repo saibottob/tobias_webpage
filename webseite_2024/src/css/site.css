@@ -417,6 +417,7 @@ body::before {
 }
 .hero h1 {
   margin: 1.5rem 0;
+  font-size: clamp(3rem, min(8.5vw, 15vh), 7.5rem);
 }
 .hero h1 .line {
   display: block;
@@ -477,9 +478,9 @@ body::before {
   position: absolute;
   z-index: 2;
   right: var(--gutter);
-  bottom: 2rem;
-  width: 17.5rem;
-  padding: 1rem 1.1rem;
+  bottom: calc(max(0px, 100% - 100svh) + 2rem);
+  width: 16rem;
+  padding: 0.8rem 1rem;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   background: rgba(var(--bg-rgb), 0.75);
@@ -511,7 +512,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.18rem 0;
+  padding: 0.1rem 0;
 }
 .hud-row i {
   width: 8px;

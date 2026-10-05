@@ -428,16 +428,22 @@ export function initHero(canvas) {
     const dist = camera.position.z;
     const vh = 2 * dist * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const vw = vh * camera.aspect;
-    const sceneW = 13.5;
+    const sceneW = 13.5; // world units, left to right incl. pylon
+    const sceneH = 7.6; // ground to sun/cloud
+    const midY = 1.6; // vertical centre of the scene
+    // the hero can be taller than the screen: fit to what is actually visible
+    const visH = Math.min(h, window.innerHeight);
+    const vhVis = (vh * visH) / h;
+    const shift = (vh * (h - visH)) / h / 2;
     if (w > 900) {
-      const avail = vw * 0.58;
-      const s = Math.min(1.5, avail / sceneW);
+      // fit by width (right part of the hero) AND by visible height, so sun and cloud never leave the screen
+      const s = Math.min(1.1, (vw * 0.56) / sceneW, (vhVis * 0.56) / sceneH);
       root.scale.setScalar(s);
-      root.position.set(vw * 0.18, 0.5, 0);
+      root.position.set(vw * 0.18, shift + vhVis * 0.1 - midY * s, 0);
     } else {
-      const s = (vw * 0.92) / sceneW;
+      const s = Math.min((vw * 0.92) / sceneW, (vhVis * 0.86) / sceneH);
       root.scale.setScalar(s);
-      root.position.set(-0.5 * s, -0.2, 0);
+      root.position.set(-0.5 * s, shift - midY * s - 0.1, 0);
     }
   }
   resize();
