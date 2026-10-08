@@ -4,10 +4,9 @@ title: Batteriespeicher – Warum die richtige Dimensionierung entscheidend ist
 date: 2026-04-22
 description: Ein falsch dimensionierter Speicher kostet viel Geld. So dimensionierst du einen Batteriespeicher korrekt.
 permalink: "/blog/batteriespeicher-dimensionierung/"
-image: /assets/images/blogposts/batterie.png
+image: /assets/images/blogposts/batterie.jpg
 tags: blog
 kategorie: technik
-blogpostcss: true
 ---
 
 Eine Solaranlage auf dem Dach, ein moderner Batteriespeicher im Keller – das klingt nach dem Traum von Unabhängigkeit und Kostenersparnis. Aber hier kommt die unbequeme Wahrheit: Ein falsch dimensionierter Speicher kann diesen Traum schnell zur teuren Enttäuschung machen.

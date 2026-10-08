@@ -4,10 +4,9 @@ title: 1. August – Geburtstag der Schweiz und ein Moment, um uns auf unsere St
 date: 2025-08-01
 description: Die Schweiz steht vor grossen Herausforderungen – doch genau jetzt ist es Zeit, sich auf das zu besinnen, was uns stark macht.
 permalink: "/blog/1-august-schweiz/"
-image: /assets/images/blogposts/1august.png
+image: /assets/images/blogposts/1august.jpg
 tags: blog
 kategorie: Politik
-blogpostcss: true
 ---
 
 ## Die Herausforderungen erkennen und annehmen

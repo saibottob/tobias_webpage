@@ -4,10 +4,9 @@ title: "13. AHV-Rente: Mehrwertsteuer-Erhöhung ist keine Lösung!"
 date: 2025-01-15
 description: "Die geplante temporäre Mehrwertsteuer-Erhöhung ist ein Nullsummenspiel. Warum eine grundlegende AHV-Reform notwendig ist."
 permalink: "/blog/ahv-rente-mehrwertsteuer/"
-image: /assets/images/blogposts/ahv-rente-mwst.png
+image: /assets/images/blogposts/ahv-rente-mwst.jpg
 tags: blog
 kategorie: Politik
-blogpostcss: true
 ---
 
 ## Das Problem mit der 13. AHV-Rente

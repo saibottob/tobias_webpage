@@ -1,219 +1,126 @@
 ---
 layout: layouts/base.html
-title: Über mich
-description: Erfahre mehr über mich, meine Interessen und mein beruflicher Werdegang
-aboutmecss: true
+title: Über mich – Tobias Gatschet
+description: Erfahre mehr über mich, meine Interessen und meinen beruflichen Werdegang
 ---
 
-<div class="am-page">
-  <!-- Hero Section -->
-  <section class="am-hero">
-    <div class="am-hero__container">
-      <div class="am-hero__portrait-frame">
-        <img
-          src="/assets/images/Portrait.jpg"
-          alt="Portrait Tobias Gatschet"
-          class="am-hero__portrait"
-        />
+<section class="about-hero">
+  <div class="container about-hero-grid">
+    <div>
+      <span class="eyebrow">Über mich</span>
+      <h1 class="h-display" style="font-size: clamp(3rem, 8vw, 6.5rem); margin-top: 1rem">Tobias<br /><span class="accent">Gatschet</span></h1>
+      <p class="lead">
+        Smart Energy Specialist und Software-Entwickler. Mein Fokus liegt auf
+        smarter Energietechnik und KI-gestützten Systemen – mit technischem
+        Tiefgang und pragmatischer Umsetzung.
+      </p>
+      <div class="chips">
+        <span class="chip">Muri bei Bern</span>
+        <span class="chip">Embedded Systems</span>
+        <span class="chip">Deutsch, Englisch</span>
       </div>
-      <div class="am-hero__content">
-        <div class="am-hero__eyebrow">Über mich</div>
-        <h1 class="am-hero__name">Tobias Gatschet</h1>
-        <p class="am-hero__role">Smart Energy Specialist &amp; Software-Entwickler</p>
-        <p class="am-hero__bio">
-          Begeisterter Entwickler mit Fokus auf smarte Energietechnik und
-          KI-gestützte Systeme. Ich verbinde technisches Tiefenwissen mit
-          pragmatischer Umsetzung.
+    </div>
+    <div class="portrait">
+      <img src="/assets/images/Portrait.jpg" alt="Portrait Tobias Gatschet" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Meine Arbeitsweise</span>
+    <h2 class="h-section" data-reveal>Erst verstehen, dann pragmatisch umsetzen.</h2>
+    <div class="two-col">
+      <div class="prose" data-reveal>
+        <p>
+          Technik fasziniert mich dort am meisten, wo komplexe Systeme wirklich
+          durchdrungen und zu Ende gedacht werden müssen. Die besten Lösungen
+          entstehen für mich im Team – im direkten Austausch mit Menschen, die
+          andere Perspektiven mitbringen.
+        </p>
+        <p>
+          Ich setze auf klare Prioritäten, pragmatische Lösungen und
+          langfristige Wirkung. Mein Motto
+          <em>«Wer handeln will, findet Wege»</em> treibt mich bei
+          Prozessoptimierung, Nachhaltigkeitszielen und digitaler
+          Transformation an.
+        </p>
+        <p>
+          Echte Veränderung entsteht durch mutige Entscheidungen und neue
+          Perspektiven – nicht durch endlose Diskussionen.
+        </p>
+        <p>
+          Mein Antrieb: komplexe technische Probleme lösen, die einem
+          grösseren Ziel dienen – und für Menschen und Themen da sein, die mir
+          wichtig sind. Ich will aktiv zu einer nachhaltigeren Welt beitragen,
+          in der Energietechnik genauso wie im politischen Engagement vor Ort.
         </p>
       </div>
-    </div>
-
-    <!-- Facts as Badges -->
-    <div class="am-hero__badges">
-      <div class="am-badge">
-        <svg
-          class="am-badge__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-          />
-          <circle cx="12" cy="9" r="2.5" />
-        </svg>
-        <span class="am-badge__text">Muri bei Bern</span>
-      </div>
-      <div class="am-badge">
-        <svg
-          class="am-badge__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="2" y="7" width="20" height="14" rx="2" />
-          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
-        </svg>
-        <span class="am-badge__text">Embedded Systems</span>
-      </div>
-      <div class="am-badge">
-        <svg
-          class="am-badge__icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path
-            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
-          />
-        </svg>
-        <span class="am-badge__text">Deutsch, Englisch</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Personal Statement Section -->
-  <section class="am-statement-section">
-    <div class="am-container">
-      <div class="am-section-eyebrow">Meine Arbeitsweise</div>
-      <h2 class="am-section-title">
-        Pragmatisch, lösungsorientiert, zukunftsorientiert.
-      </h2>
-      <div class="am-two-col">
-        <div>
-          <div class="am-statement">
-            <p class="am-statement__text">
-              Technik begeistert mich dort am meisten, wo komplexe Systeme
-              durchdrungen und zu Ende gedacht werden müssen. Die besten
-              Lösungen entstehen für mich im Team – im direkten Austausch mit
-              Menschen, die unterschiedliche Perspektiven einbringen.
-            </p>
-            <p class="am-statement__text">
-              Ich arbeite mit Fokus auf pragmatische Lösungen, klare Prioritäten
-              und langfristige Wirkung. Mit dem Motto
-              <em>«Wer handeln will, findet Wege»</em> setze ich mich für
-              Prozessoptimierung, Nachhaltigkeitsziele und digitale
-              Transformation ein.
-            </p>
-          </div>
-          <p class="am-followup">
-            Ich glaube, dass echte Veränderung durch mutige Entscheidungen und
-            neue Perspektiven entsteht, nicht durch endlose Diskussionen.
-          </p>
-          <p class="am-followup">
-            Mein Antrieb: komplexe technische Probleme lösen, die einem
-            grösseren Ziel dienen – und für Menschen und Themen da sein, die
-            mir wichtig sind. Ich will einen aktiven Beitrag zu einer
-            nachhaltigeren Welt leisten, in der Energietechnik genauso wie im
-            politischen Engagement vor Ort.
-          </p>
+      <div class="affil">
+        <div class="affil-card" data-reveal>
+          <h3>Soleco</h3>
+          <p>Energiemanagement, Wärmepumpen und smarte Haustechnik</p>
         </div>
-        <div class="am-affiliation-cards">
-          <div class="am-affiliation-card am-affiliation-card--amber">
-            <div class="am-affiliation-card__name">Soleco</div>
-            <p class="am-affiliation-card__desc">
-              Energiemanagement, Wärmepumpen und smarte Haustechnik
-            </p>
-          </div>
-          <div class="am-affiliation-card am-affiliation-card--blue">
-            <div class="am-affiliation-card__name">Produkt &amp; Strategie</div>
-            <p class="am-affiliation-card__desc">
-              Nutzerfokus, klare Entscheidungen und nachhaltige Umsetzung
-            </p>
-          </div>
-          <div class="am-affiliation-card am-affiliation-card--amber">
-            <div class="am-affiliation-card__name">Politik &amp; Gemeinde</div>
-            <p class="am-affiliation-card__desc">
-              FDP-Mitglied – für pragmatische Lösungen in Gemeinde und
-              Gesellschaft
-            </p>
-          </div>
+        <div class="affil-card" data-reveal>
+          <h3>Produkt &amp; Strategie</h3>
+          <p>Nutzerfokus, klare Entscheidungen, nachhaltige Umsetzung</p>
+        </div>
+        <div class="affil-card" data-reveal>
+          <h3>Politik &amp; Gemeinde</h3>
+          <p>Pragmatisch und liberal engagiert in Gemeinde und Gesellschaft – als Mitglied der FDP</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Experience Timeline Section -->
-  <section class="am-timeline-section" id="werdegang">
-    <div class="am-container">
-      <div class="am-section-eyebrow">Werdegang</div>
-      <h2 class="am-section-title">Meine Reise</h2>
-
-      <div class="am-timeline">
-        {% set experienceItems = collections.experience %} {% for item in
-        experienceItems %}
-        <div class="am-timeline__item">
-          <div class="am-timeline__marker">
-            {% if item.data.year %}
-            <span class="am-timeline__year">{{ item.data.year }}</span>
-            {% else %}
-            <span class="am-timeline__dot"></span>
-            {% endif %}
-          </div>
-          <a class="am-timeline__link" href="{{ item.url }}">
-            <div class="am-timeline__content">
-              <time class="am-timeline__period">{{ item.data.period }}</time>
-              <h3 class="am-timeline__company">{{ item.data.title }}</h3>
-              <p class="am-timeline__description">
-                {{ item.data.description }}
-              </p>
-              <span class="am-timeline__cta">Details ansehen →</span>
-            </div>
-          </a>
-        </div>
-        {% endfor %}
+<section class="section" id="werdegang" style="padding-top: 0">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Werdegang</span>
+    <h2 class="h-section" data-reveal>Meine Reise</h2>
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"><i></i></div>
+      {% for item in collections.experience %}
+      <div class="tl-item" data-reveal>
+        <a class="tl-card" href="{{ item.url }}">
+          <span class="tl-period">{{ item.data.period }}</span>
+          <h3>{{ item.data.title }}</h3>
+          <p>{{ item.data.description }}</p>
+          <span class="link-arrow">Details ansehen <span class="arrow">→</span></span>
+        </a>
       </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Skills Section -->
-  <section class="am-skills-section">
-    <div class="am-container">
-      <h2 class="am-section-title">Fähigkeiten</h2>
-      <div class="am-skills">
-        {% for skill in skills %}
-        <span class="am-skill">{{ skill.name }}</span>
-        {% endfor %}
-      </div>
+<section class="section" style="padding-top: 0">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Kompetenzen</span>
+    <h2 class="h-section" data-reveal>Was ich mitbringe</h2>
+    <div class="chips" style="margin-top: 2rem" data-reveal>
+      {% for skill in skills %}<span class="chip">{{ skill.name }}</span>{% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Hobbies Section -->
-  <section class="am-hobbies-section">
-    <div class="am-container">
-      <div class="am-section-eyebrow">Ausgleich</div>
-      <h2 class="am-section-title">Was mich sonst bewegt</h2>
-      <div class="am-two-col">
-        <div>
-          <h3 class="am-hobby-group__title">Sport &amp; Bewegung</h3>
-          <div class="am-hobbies">
-            <span class="am-hobby">Golf</span>
-            <span class="am-hobby">Handball</span>
-            <span class="am-hobby">Gym</span>
-            <span class="am-hobby">Velofahren</span>
-            <span class="am-hobby">Wandern</span>
-          </div>
+<section class="section" style="padding-top: 0">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Ausgleich</span>
+    <h2 class="h-section" data-reveal>Was mich sonst bewegt</h2>
+    <div class="two-col">
+      <div data-reveal>
+        <h3 class="eyebrow" style="margin-bottom: 1rem">Sport &amp; Bewegung</h3>
+        <div class="chips">
+          <span class="chip">Golf</span><span class="chip">Handball</span><span class="chip">Gym</span><span class="chip">Velofahren</span><span class="chip">Wandern</span>
         </div>
-        <div>
-          <h3 class="am-hobby-group__title">Wissen &amp; Neugier</h3>
-          <div class="am-hobbies">
-            <span class="am-hobby">Bücher lesen</span>
-            <span class="am-hobby">Neues lernen</span>
-            <span class="am-hobby">Technik verstehen</span>
-          </div>
+      </div>
+      <div data-reveal>
+        <h3 class="eyebrow" style="margin-bottom: 1rem">Wissen &amp; Neugier</h3>
+        <div class="chips">
+          <span class="chip">Bücher lesen</span><span class="chip">Neues lernen</span><span class="chip">Technik verstehen</span>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

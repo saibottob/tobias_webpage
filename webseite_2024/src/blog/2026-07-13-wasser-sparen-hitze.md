@@ -4,10 +4,9 @@ title: "Wasser sparen im Alltag: Kleine Massnahmen, grosse Wirkung"
 date: 2026-07-13
 description: "Rekord-Trockenheit 2026: Warum Wasser für Nahrung, Tiere und Wald knapp wird, und wie du mit Sparduschbrause, Regentonne und Regenwassernutzung selbst Wasser und Geld sparst."
 permalink: "/blog/wasser-sparen-hitze/"
-image: /assets/images/blogposts/wassermangel.png
+image: /assets/images/blogposts/wassermangel.jpg
 tags: blog
 kategorie: Nachhaltigkeit
-blogpostcss: true
 ---
 
 Seit Wochen herrschen in weiten Teilen der Schweiz Temperaturen über 35 Grad, und die aktuelle Trockenheit gehört zu den markantesten seit Messbeginn. In den letzten drei Monaten fiel auf der Alpennordseite und im Wallis nur rund halb so viel Niederschlag wie im langjährigen Mittel, Böden, Grundwasser und Gewässer trocknen zunehmend aus.

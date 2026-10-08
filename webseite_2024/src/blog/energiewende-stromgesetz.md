@@ -4,7 +4,7 @@ title: Wir brauchen Strom – Ja zum Stromgesetz am 9. Juni
 date: 2024-06-05
 description: Die Energiewende braucht rasch ausbaubare erneuerbare Energien – kein neues Kernkraftwerk, das 20 Jahre auf sich warten lässt. Jetzt handeln.
 permalink: "/blog/energiewende-stromgesetz/"
-image: /assets/images/blogposts/energiegesetz.png
+image: /assets/images/blogposts/energiegesetz.jpg
 tags: blog
 kategorie: Politik
 ---

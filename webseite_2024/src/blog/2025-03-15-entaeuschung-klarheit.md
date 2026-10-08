@@ -4,10 +4,9 @@ title: "Enttäuschung ist das Ende der Illusion – und der Anfang von Klarheit"
 date: 2025-03-15
 description: "Warum Enttäuschungen der erste Schritt zu neuen Chancen und echtem Fortschritt sind."
 permalink: "/blog/entaeuschung-klarheit/"
-image: /assets/images/blogposts/entaeuschung-anfang.png
+image: /assets/images/blogposts/entaeuschung-anfang.jpg
 tags: blog
 kategorie: Perspektiven
-blogpostcss: true
 ---
 
 ## Enttäuschung ist das Ende der Illusion und der Anfang von Klarheit

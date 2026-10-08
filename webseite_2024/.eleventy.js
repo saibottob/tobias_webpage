@@ -4,13 +4,28 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js/");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
+  // Self-hosted animation libs
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/three/build/three.module.js": "vendor/three/three.module.js",
+    "node_modules/three/build/three.core.js": "vendor/three/three.core.js",
+    "node_modules/animejs/dist/bundles/anime.esm.min.js": "vendor/anime.esm.min.js",
+    "node_modules/motion/dist/motion.js": "vendor/motion.js",
+  });
+
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
   eleventyConfig.addFilter("displayCategory", function (value) {
-    if (value === "Politik") {
-      return "Gesellschaft";
-    }
-    return value;
+    if (!value) return "";
+    const v = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+    return v === "Politik" ? "Gesellschaft" : v;
+  });
+
+  eleventyConfig.addFilter("readingTime", function (html) {
+    const words = String(html || "")
+      .replace(/<[^>]*>/g, " ")
+      .split(/\s+/)
+      .filter(Boolean).length;
+    return Math.max(1, Math.round(words / 200));
   });
 
   eleventyConfig.addFilter("date", function (value, format) {
