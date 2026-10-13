@@ -1311,7 +1311,7 @@ footer {
   align-content: start;
 }
 .footer-nav a {
-  color: var(--text-mid);
+  color: var(--text-soft);
   transition: color 0.2s;
 }
 .footer-nav a:hover {
@@ -1327,6 +1327,12 @@ footer {
   border-top: 1px solid var(--border);
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+.footer-bottom a {
+  color: var(--text-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
 }
 .footer-bottom a:hover {
   color: var(--accent);
