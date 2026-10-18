@@ -8,7 +8,10 @@
     <title>{{ title }}</title>
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
 
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://tobias-gatschet.ch{{ page.url }}" />
+
+    <meta property="og:type" content="{% if layout == 'layouts/blogpost.html' %}article{% else %}website{% endif %}" />
+    <meta property="og:locale" content="de_CH" />
     <meta property="og:site_name" content="Tobias Gatschet" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description }}" />
@@ -17,6 +20,11 @@
       content="https://tobias-gatschet.ch{{ image or '/assets/images/hero-image.jpg' }}"
     />
     <meta property="og:url" content="https://tobias-gatschet.ch{{ page.url }}" />
+    <meta property="og:image:alt" content="{{ title }}" />
+    {% if layout == 'layouts/blogpost.html' %}
+    <meta property="article:published_time" content="{{ page.date.toISOString() }}" />
+    <meta property="article:author" content="Tobias Gatschet" />
+    {% endif %}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />
