@@ -107,15 +107,18 @@ dist/                         # Built output (git-ignored)
 layout: layouts/blogpost.html
 title: Post Title
 date: 2025-04-18
+updated: 2025-04-20 # optional; sonst gilt date für modified_time, dateModified und Sitemap-lastmod
 description: Short description
 permalink: "/blog/slug/"
 image: /assets/images/blogposts/image.png
 tags: blog
-kategorie: politik # or technik
+kategorie: technik # Politik wird in der Anzeige zu Gesellschaft
 ---
 ```
 
 3. Write content in Markdown below frontmatter
+
+Felder, `updated` und die SEO-Ausgabe: `webseite_2024/docs/blog-frontmatter.md`.
 
 ### Adding Experience Entry
 
