@@ -1525,3 +1525,42 @@ footer {
   filter: brightness(0);
   opacity: 0.75;
 }
+
+.cred-list {
+  display: grid;
+  gap: 1rem;
+}
+.cred {
+  padding: 1.2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.3s;
+}
+.cred:hover {
+  border-color: var(--accent);
+}
+.cred h4 {
+  font-family: var(--font-d);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin: 0.2rem 0 0.4rem;
+}
+.cred p {
+  color: var(--text-mid);
+  font-size: 0.92rem;
+}
+.cred .link-arrow {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+}
+.cred-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 60% 30%;
+  border-radius: var(--radius-sm, 8px);
+  margin-bottom: 1rem;
+}

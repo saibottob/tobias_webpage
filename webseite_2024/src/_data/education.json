@@ -1,0 +1,45 @@
+{
+  "certificates": [
+    {
+      "title": "IPMA Level D – Certified Project Management Associate",
+      "issuer": "VZPM / spm swiss project management association",
+      "period": "2025 – 2030",
+      "note": "Erstzertifizierung 24.04.2025, gültig bis 23.04.2030"
+    },
+    {
+      "title": "Professional Scrum Master I (PSM I)",
+      "issuer": "Scrum.org",
+      "period": "2020/21",
+      "note": ""
+    },
+    {
+      "title": "Didaktikzertifikat",
+      "issuer": "ETH Zürich",
+      "period": "laufend",
+      "note": "Unterrichtsgestaltung, Assessment-Design, Wissensvermittlung"
+    },
+    {
+      "title": "SAFe Agilist",
+      "issuer": "Scaled Agile",
+      "period": "2020/21",
+      "note": "abgelaufen"
+    }
+  ],
+  "events": [
+    {
+      "title": "Batteriekongress 2026",
+      "role": "Referent",
+      "period": "20.10.2026",
+      "detail": "EMS-Pitches: Optimierung von Eigenverbrauch und Abnahmevergütung",
+      "url": "https://www.batteriekongress.ch/referierende?speakerId=85771",
+      "image": "/assets/images/batteriekongress-2026.jpg",
+      "alt": "Tobias Gatschet als Referent am Batteriekongress 2026"
+    },
+    {
+      "title": "Radar-Workshop",
+      "role": "Teilnehmer",
+      "detail": "Fraunhofer Institut",
+      "period": "2024"
+    }
+  ]
+}

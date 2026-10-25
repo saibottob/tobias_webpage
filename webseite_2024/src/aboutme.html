@@ -94,6 +94,41 @@ description: Erfahre mehr über mich, meine Interessen und meinen beruflichen We
   </div>
 </section>
 
+<section class="section" style="padding-top: 0" id="weiterbildung">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Weiterbildung &amp; Auftritte</span>
+    <h2 class="h-section" data-reveal>Zertifiziert und auf der Bühne</h2>
+    <div class="two-col">
+      <div data-reveal>
+        <h3 class="eyebrow" style="margin-bottom: 1rem">Zertifikate</h3>
+        <div class="cred-list">
+          {% for c in education.certificates %}
+          <div class="cred">
+            <span class="tl-period">{{ c.period }}</span>
+            <h4>{{ c.title }}</h4>
+            <p>{{ c.issuer }}{% if c.note %} · {{ c.note }}{% endif %}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div data-reveal>
+        <h3 class="eyebrow" style="margin-bottom: 1rem">Kongresse &amp; Workshops</h3>
+        <div class="cred-list">
+          {% for e in education.events %}
+          <div class="cred">
+            {% if e.image %}<img class="cred-photo" src="{{ e.image }}" alt="{{ e.alt }}" loading="lazy" />{% endif %}
+            <span class="tl-period">{{ e.role }}{% if e.period %} · {{ e.period }}{% endif %}</span>
+            <h4>{{ e.title }}</h4>
+            <p>{{ e.detail }}</p>
+            {% if e.url %}<a class="link-arrow" href="{{ e.url }}" target="_blank" rel="noopener">Zum Programm <span class="arrow">→</span></a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" style="padding-top: 0">
   <div class="container">
     <span class="eyebrow" data-reveal>Kompetenzen</span>
