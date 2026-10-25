@@ -26,32 +26,17 @@ Vier Secrets, genau diese Namen:
 | `FTP_SERVER` | `sl1737.web.hostpoint.ch` |
 | `FTP_USERNAME` | `tobias@cfmag.ch` |
 | `FTP_PASSWORD` | FTP-Passwort aus dem Hostpoint Control Panel |
-| `FTP_SERVER_DIR` | Zielordner, wie er nach dem FTP-Login sichtbar ist. Siehe unten. |
+| `FTP_SERVER_DIR` | `/www/tobias-gatschet.ch` |
 
 Das Passwort gehört in kein File und in keinen Commit. Die Werte stehen nur in den GitHub-Secrets; der Workflow liest sie zur Laufzeit.
 
 ## Zielordner
 
-Im Repository gibt es keinen hinterlegten Pfad der Live-Seite.
+Die Live-Seite liegt auf dem Server in `/www/tobias-gatschet.ch`. Unter `www/` liegen weitere Domains, deshalb darf der Upload nicht nach `www/` selbst gehen. Als `FTP_SERVER_DIR` genau `/www/tobias-gatschet.ch` eintragen.
 
-Bei Hostpoint ist das Home dieses Hostings `/home/axesotis/`. Das Document-Root einer Domain liegt üblicherweise hier:
+Das Home des Hostings ist `/home/axesotis/`. Der FTP-Benutzer sieht den Ordner je nach Login als `/www/tobias-gatschet.ch` oder als `www/tobias-gatschet.ch`. Beides bezeichnet denselben Ordner, solange es nicht nur `www/` ist. Der Workflow lehnt `www` und `/www` ab.
 
-- Website ab September 2007: `/home/axesotis/www/tobias-gatschet.ch/`
-- ältere Website: `/home/axesotis/public_html/`
-
-Den Ordnernamen kann man im Control Panel unter **Websites** ändern. Er muss also nicht zwingend `tobias-gatschet.ch` heissen.
-
-`tobias@cfmag.ch` ist ein zusätzlicher FTP-Benutzer. Solche Konten sehen nach dem Login oft nicht das ganze Home, sondern nur einen freigegebenen Unterordner. `FTP_SERVER_DIR` ist deshalb der Pfad **relativ zu dem, was FileZilla direkt nach dem Login anzeigt**, nicht automatisch `/home/axesotis/...`.
-
-So den Ordner bestimmen:
-
-1. In FileZilla mit **explizitem FTP über TLS**, Port 21, auf `sl1737.web.hostpoint.ch` verbinden.
-2. Den Ordner suchen, in dem die Live-Seite liegt. Erkennbar an `index.html` und zum Beispiel `blog/batteriekongress-2026/index.html`.
-3. Diesen Pfad als `FTP_SERVER_DIR` eintragen.
-   - Die Seite liegt direkt im Login-Ordner: `/` oder `.`
-   - Nach dem Login sieht man `www`: zum Beispiel `www/tobias-gatschet.ch/`
-
-Der Workflow wechselt mit `cd` in diesen Ordner. Gibt es ihn nicht, bricht der Lauf ab und legt nichts an.
+Der Workflow wechselt mit `cd` in diesen Ordner. Gibt es ihn nicht, bricht der Lauf ab und legt nichts an. In FileZilla ist der Ordner daran zu erkennen, dass darin `index.html` und `blog/batteriekongress-2026/index.html` liegen.
 
 ## Dry-Run
 
@@ -74,4 +59,4 @@ Wenn die Secrets schon vor dem Merge existieren, lädt der Merge sofort wirklich
 - Hochgeladen wird nur der Inhalt von `webseite_2024/dist`, in den Zielordner hinein, nicht in einen Unterordner `dist`.
 - Gleichnamige Dateien werden überschrieben. Dateien, die nur auf dem Server liegen (`.htaccess`, Statistiken, andere Domains, manuell hochgeladene Dateien), bleiben.
 - Es gibt kein `--delete` und kein `dangerous-clean-slate`. Ein Blogpost, der aus dem Repo verschwindet, bleibt online, bis er in FileZilla gelöscht wird.
-- Ein falscher, aber vorhandener Zielordner wird überschrieben. `www/` allein wäre der Ordner aller Domains, nicht die einzelne Website. Vor dem ersten echten Lauf den Dry-Run machen und den Pfad in FileZilla gegen `blog/batteriekongress-2026/index.html` prüfen.
+- Ein falscher, aber vorhandener Zielordner wird überschrieben. `www/` allein enthält die anderen Domains und wird vom Workflow abgelehnt. Der gesetzte Ordner ist `/www/tobias-gatschet.ch`. Vor dem ersten echten Lauf den Dry-Run machen und prüfen, dass der Pfad im Log auf `tobias-gatschet.ch` endet und `blog/batteriekongress-2026/index.html` vorkommt.

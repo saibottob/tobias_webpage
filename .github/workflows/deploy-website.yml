@@ -60,6 +60,7 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          # Live-Ordner: /www/tobias-gatschet.ch (www/ enthält weitere Domains)
           FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true && 'true' || 'false' }}
           LOCAL_DIR: dist

@@ -46,6 +46,13 @@ if [[ "$FTP_SERVER_DIR" == *".."* ]]; then
   echo "FTP_SERVER_DIR darf keine '..'-Segmente enthalten." >&2
   exit 1
 fi
+# www/ enthält mehrere Domains. Die Live-Seite ist nur /www/tobias-gatschet.ch.
+case "${FTP_SERVER_DIR%/}" in
+  www | /www)
+    echo "FTP_SERVER_DIR darf nicht das übergeordnete www/ sein. Dort liegen mehrere Domains. Erwartet: /www/tobias-gatschet.ch" >&2
+    exit 1
+    ;;
+esac
 
 PORT="${FTP_PORT:-21}"
 if [[ ! "$PORT" =~ ^[0-9]+$ ]] || [[ "$PORT" -lt 1 || "$PORT" -gt 65535 ]]; then
