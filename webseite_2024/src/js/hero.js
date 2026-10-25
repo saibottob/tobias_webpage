@@ -355,7 +355,7 @@ export function initHero(canvas) {
   /* ---------- Labels ---------- */
   const labelRoot = document.getElementById("hero-labels");
   const labelDefs = [ { id: "sun", name: "Sonne", dot: "#f4c300", at: V(1.2, 5.3, -2.2), m: 1 },
-    { id: "town", name: "Gemeinde", dot: "#b28dff", at: V(-5.1, 1.85, -3.4), m: 1 },
+    { id: "town", name: "Gemeinde", dot: "#b28dff", at: V(-5.1, 1.85, -3.4), m: 0 },
     { id: "water", name: "Regenwasser", dot: "#35c6f5", at: V(2.8, -0.35, 0.3), m: 0 },
     { id: "pv", name: "PV-Anlage", dot: "#f4c300", at: V(0, 1.9, 0.9), m: 1 },
     { id: "ems", name: "EMS", dot: "#f4c300", at: V(0, -0.35, 0.2), m: 0 },
