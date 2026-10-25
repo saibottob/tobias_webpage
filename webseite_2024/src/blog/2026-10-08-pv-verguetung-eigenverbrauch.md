@@ -57,7 +57,7 @@ Die Zeiten, in denen sich eine Solaranlage über die Einspeisung gerechnet hat, 
 
 Der wertvollste Solarstrom ist nicht der, den du verkaufst. Es ist der, den du selbst nutzt.
 
-Am 20. Oktober spreche ich übrigens am Batteriekongress in Baden genau über dieses Thema: die Optimierung von Eigenverbrauch und Abnahmevergütung.
+Am 20. Oktober habe ich am Batteriekongress in Baden genau über dieses Thema gesprochen: die Optimierung von Eigenverbrauch und Abnahmevergütung. [Meine Eindrücke vom Kongress](/blog/batteriekongress-2026/) findest du in einem eigenen Beitrag.
 
 Wie nutzt du deinen Solarstrom heute: Speist du vor allem ein, oder steuerst du schon smart? Schreib mir gerne per Mail an [info@tobias-gatschet.ch](mailto:info@tobias-gatschet.ch), ich freue mich auf deine Erfahrungen.
 
