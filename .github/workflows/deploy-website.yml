@@ -1,0 +1,67 @@
+# Baut die Eleventy-Seite und lädt nur webseite_2024/dist per explizitem FTPS hoch.
+# Auf dem Server wird nichts gelöscht (kein clean-slate, kein mirror --delete).
+
+name: Website bauen und zu Hostpoint deployen
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "webseite_2024/**"
+      - ".github/workflows/deploy-website.yml"
+      - ".github/scripts/deploy-ftps.sh"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry-Run: Verbindung und Dateiliste prüfen, nichts hochladen"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-hostpoint
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Build und FTPS-Upload
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: webseite_2024
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js 22 einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: webseite_2024/package-lock.json
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Seite bauen
+        run: npm run build
+
+      - name: lftp installieren
+        working-directory: ${{ github.workspace }}
+        run: sudo apt-get update && sudo apt-get install --yes lftp
+
+      - name: Per FTPS hochladen
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          # www/ enthält mehrere Domains; der Secret-Wert muss der Website-Unterordner sein.
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true && 'true' || 'false' }}
+          LOCAL_DIR: dist
+        run: bash "${GITHUB_WORKSPACE}/.github/scripts/deploy-ftps.sh"
