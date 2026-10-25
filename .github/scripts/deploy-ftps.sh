@@ -28,7 +28,7 @@ require_var FTP_SERVER_DIR
 export FTP_SERVER FTP_USERNAME FTP_PASSWORD FTP_SERVER_DIR
 
 if [[ ! "$FTP_SERVER" =~ ^[A-Za-z0-9.-]+$ ]]; then
-  echo "FTP_SERVER muss ein Hostname sein, ohne Schema, Pfad oder Leerzeichen. Beispiel: sl1737.web.hostpoint.ch" >&2
+  echo "FTP_SERVER muss ein Hostname sein, ohne Schema, Pfad oder Leerzeichen." >&2
   exit 1
 fi
 
@@ -46,10 +46,10 @@ if [[ "$FTP_SERVER_DIR" == *".."* ]]; then
   echo "FTP_SERVER_DIR darf keine '..'-Segmente enthalten." >&2
   exit 1
 fi
-# www/ enthält mehrere Domains. Die Live-Seite ist nur /www/tobias-gatschet.ch.
+# www/ enthält mehrere Domains. FTP_SERVER_DIR muss der Unterordner der Website sein.
 case "${FTP_SERVER_DIR%/}" in
   www | /www)
-    echo "FTP_SERVER_DIR darf nicht das übergeordnete www/ sein. Dort liegen mehrere Domains. Erwartet: /www/tobias-gatschet.ch" >&2
+    echo "FTP_SERVER_DIR darf nicht das übergeordnete www/ sein. Dort liegen mehrere Domains." >&2
     exit 1
     ;;
 esac

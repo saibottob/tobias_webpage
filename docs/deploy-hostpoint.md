@@ -19,24 +19,16 @@ Node ist im Workflow auf Version 22 gesetzt. Eleventy 3.1.2 verlangt Node 18 ode
 
 Repository **saibottob/tobias_webpage** → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 
-Vier Secrets, genau diese Namen:
+Vier Secrets, genau diese Namen. Die Werte selbst stehen nur in GitHub, nicht in dieser Anleitung und nicht im Repo.
 
-| Name | Wert |
+| Name | Was hineinkommt |
 | --- | --- |
-| `FTP_SERVER` | `sl1737.web.hostpoint.ch` |
-| `FTP_USERNAME` | `tobias@cfmag.ch` |
-| `FTP_PASSWORD` | FTP-Passwort aus dem Hostpoint Control Panel |
-| `FTP_SERVER_DIR` | `/www/tobias-gatschet.ch` |
+| `FTP_SERVER` | FTP-Hostname aus dem Hostpoint Control Panel |
+| `FTP_USERNAME` | FTP-Benutzername |
+| `FTP_PASSWORD` | FTP-Passwort dieses Benutzers |
+| `FTP_SERVER_DIR` | Ordner der Website nach dem FTP-Login, nicht der übergeordnete Ordner `www/` |
 
-Das Passwort gehört in kein File und in keinen Commit. Die Werte stehen nur in den GitHub-Secrets; der Workflow liest sie zur Laufzeit.
-
-## Zielordner
-
-Die Live-Seite liegt auf dem Server in `/www/tobias-gatschet.ch`. Unter `www/` liegen weitere Domains, deshalb darf der Upload nicht nach `www/` selbst gehen. Als `FTP_SERVER_DIR` genau `/www/tobias-gatschet.ch` eintragen.
-
-Das Home des Hostings ist `/home/axesotis/`. Der FTP-Benutzer sieht den Ordner je nach Login als `/www/tobias-gatschet.ch` oder als `www/tobias-gatschet.ch`. Beides bezeichnet denselben Ordner, solange es nicht nur `www/` ist. Der Workflow lehnt `www` und `/www` ab.
-
-Der Workflow wechselt mit `cd` in diesen Ordner. Gibt es ihn nicht, bricht der Lauf ab und legt nichts an. In FileZilla ist der Ordner daran zu erkennen, dass darin `index.html` und `blog/batteriekongress-2026/index.html` liegen.
+`www/` enthält mehrere Domains. `FTP_SERVER_DIR` muss der Unterordner der einzelnen Website sein. Der Workflow lehnt `www` und `/www` ab. In FileZilla ist der richtige Ordner daran zu erkennen, dass darin `index.html` und die Blogposts liegen. Der Workflow wechselt in diesen Ordner. Gibt es ihn nicht, bricht der Lauf ab und legt nichts an.
 
 ## Dry-Run
 
@@ -55,8 +47,8 @@ Wenn die Secrets schon vor dem Merge existieren, lädt der Merge sofort wirklich
 
 ## Was der Upload tut und was nicht
 
-- Protokoll: explizites FTPS auf Port 21 (`AUTH TLS`), Steuer- und Datenverbindung verschlüsselt. Das Zertifikat des Hostnamens wird geprüft. `FTP_SERVER` muss zum Zertifikat passen, also `sl1737.web.hostpoint.ch`.
+- Protokoll: explizites FTPS auf Port 21 (`AUTH TLS`), Steuer- und Datenverbindung verschlüsselt. Das Zertifikat des Hostnamens wird geprüft. `FTP_SERVER` muss zum Zertifikat passen.
 - Hochgeladen wird nur der Inhalt von `webseite_2024/dist`, in den Zielordner hinein, nicht in einen Unterordner `dist`.
 - Gleichnamige Dateien werden überschrieben. Dateien, die nur auf dem Server liegen (`.htaccess`, Statistiken, andere Domains, manuell hochgeladene Dateien), bleiben.
 - Es gibt kein `--delete` und kein `dangerous-clean-slate`. Ein Blogpost, der aus dem Repo verschwindet, bleibt online, bis er in FileZilla gelöscht wird.
-- Ein falscher, aber vorhandener Zielordner wird überschrieben. `www/` allein enthält die anderen Domains und wird vom Workflow abgelehnt. Der gesetzte Ordner ist `/www/tobias-gatschet.ch`. Vor dem ersten echten Lauf den Dry-Run machen und prüfen, dass der Pfad im Log auf `tobias-gatschet.ch` endet und `blog/batteriekongress-2026/index.html` vorkommt.
+- Ein falscher, aber vorhandener Zielordner wird überschrieben. `www/` allein enthält die anderen Domains und wird vom Workflow abgelehnt. Vor dem ersten echten Lauf den Dry-Run machen und im Log prüfen, dass der Pfad der Website-Ordner ist und ein bekannter Blogpost vorkommt.
