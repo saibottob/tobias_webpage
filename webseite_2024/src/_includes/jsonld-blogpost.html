@@ -1,0 +1,28 @@
+{%- set blogPosting = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description or "",
+  "image": socialImageUrl,
+  "datePublished": datePublished,
+  "dateModified": dateModified,
+  "author": {
+    "@type": "Person",
+    "name": "Tobias Gatschet",
+    "url": site.url + "/"
+  },
+  "url": pageAbsolute,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": pageAbsolute
+  },
+  "inLanguage": "de-CH",
+  "publisher": {
+    "@type": "Person",
+    "name": "Tobias Gatschet",
+    "url": site.url + "/"
+  }
+} -%}
+    <script type="application/ld+json">
+{{ blogPosting | jsonld | safe }}
+    </script>

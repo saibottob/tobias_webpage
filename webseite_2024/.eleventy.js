@@ -1,4 +1,18 @@
+const path = require("path");
+const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
+const {
+  isoDate,
+  modifiedDate,
+  feedUpdated,
+  createImageDimensions,
+  warnIncompleteBlogPosts,
+  sitemapEntries,
+  jsonld,
+} = require("./lib/seo");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(rssPlugin);
+
   eleventyConfig.addPassthroughCopy("src/assets/");
   eleventyConfig.addPassthroughCopy("src/css/");
   eleventyConfig.addPassthroughCopy("src/js/");
@@ -13,6 +27,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
+  eleventyConfig.addFilter("isoDate", isoDate);
+  eleventyConfig.addFilter("modifiedDate", modifiedDate);
+  eleventyConfig.addFilter("feedUpdated", feedUpdated);
+  eleventyConfig.addFilter("imageDimensions", createImageDimensions(path.join(__dirname, "src")));
+  eleventyConfig.addFilter("sitemapEntries", sitemapEntries);
+  eleventyConfig.addFilter("jsonld", jsonld);
 
   eleventyConfig.addFilter("displayCategory", function (value) {
     if (!value) return "";
@@ -43,9 +63,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/");
 
   eleventyConfig.addCollection("blog", function (collectionApi) {
-    return collectionApi.getFilteredByTag("blog").sort((a, b) => {
+    const posts = collectionApi.getFilteredByTag("blog").sort((a, b) => {
       return b.date - a.date; // Neueste zuerst
     });
+    warnIncompleteBlogPosts(posts);
+    return posts;
   });
 
   eleventyConfig.addCollection("experience", function (collectionApi) {

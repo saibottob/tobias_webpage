@@ -8,30 +8,44 @@
     <title>{{ title }}</title>
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
 
-    <link rel="canonical" href="https://tobias-gatschet.ch{{ page.url }}" />
+    {%- set pageAbsolute = site.url + page.url -%}
+    {%- set datePublished = page.date.toISOString() -%}
+    {%- set dateModified = updated | isoDate(datePublished) -%}
+    {%- set socialImage = image or "/assets/images/hero-image.jpg" -%}
+    {%- set socialImageUrl = socialImage | absoluteUrl(site.url) -%}
+    {%- set socialImageSize = socialImage | imageDimensions(imageWidth, imageHeight) %}
+
+    <link rel="canonical" href="{{ pageAbsolute }}" />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="{{ site.feedTitle }}"
+      href="{{ site.url }}/feed.xml"
+    />
 
     <meta property="og:type" content="{% if layout == 'layouts/blogpost.html' %}article{% else %}website{% endif %}" />
     <meta property="og:locale" content="de_CH" />
     <meta property="og:site_name" content="Tobias Gatschet" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta
-      property="og:image"
-      content="https://tobias-gatschet.ch{{ image or '/assets/images/hero-image.jpg' }}"
-    />
-    <meta property="og:url" content="https://tobias-gatschet.ch{{ page.url }}" />
+    <meta property="og:image" content="{{ socialImageUrl }}" />
+    {%- if socialImageSize %}
+    <meta property="og:image:width" content="{{ socialImageSize.width }}" />
+    <meta property="og:image:height" content="{{ socialImageSize.height }}" />
+    {%- endif %}
+    <meta property="og:url" content="{{ pageAbsolute }}" />
     <meta property="og:image:alt" content="{{ title }}" />
     {% if layout == 'layouts/blogpost.html' %}
-    <meta property="article:published_time" content="{{ page.date.toISOString() }}" />
+    <meta property="article:published_time" content="{{ datePublished }}" />
+    <meta property="article:modified_time" content="{{ dateModified }}" />
     <meta property="article:author" content="Tobias Gatschet" />
-    {% endif %}
+    {% if kategorie %}<meta property="article:section" content="{{ kategorie | displayCategory }}" />{% endif %}
+    {% include "jsonld-blogpost.html" %}
+    {%- endif %}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta
-      name="twitter:image"
-      content="https://tobias-gatschet.ch{{ image or '/assets/images/hero-image.jpg' }}"
-    />
+    <meta name="twitter:image" content="{{ socialImageUrl }}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
